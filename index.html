@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayat Merimi – Future Ingénieure Cybersécurité</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0e1a;
+      --bg2: #0f1628;
+      --card: #131929;
+      --accent: #00c8ff;
+      --accent2: #7b5ea7;
+      --green: #00ffb3;
+      --text: #e2e8f0;
+      --muted: #8892a4;
+      --border: #1e2d45;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "cv02","cv03","cv04","cv11";
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 3rem;
+      background: rgba(10,14,26,.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem; font-weight: 600; color: var(--accent);
+      letter-spacing: .03em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none; font-size: .9rem;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(0,200,255,.07) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(123,94,167,.1) 0%, transparent 55%);
+      position: relative; overflow: hidden;
+    }
+    .grid-bg {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: .3;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 750px; }
+    .badge {
+      display: inline-block;
+      padding: .3rem .9rem;
+      border: 1px solid var(--accent);
+      border-radius: 100px;
+      color: var(--accent);
+      font-size: .8rem; letter-spacing: .1em;
+      margin-bottom: 1.5rem;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(0,200,255,.3); }
+      50%      { box-shadow: 0 0 0 6px rgba(0,200,255,0); }
+    }
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800; line-height: 1.08;
+      letter-spacing: -.02em;
+      background: linear-gradient(135deg, #fff 30%, var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+    .hero-sub {
+      font-size: 1.15rem; color: var(--muted); margin-bottom: 2rem;
+    }
+    .hero-tags {
+      display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+    .tag {
+      padding: .3rem .8rem;
+      border-radius: 6px;
+      background: rgba(0,200,255,.08);
+      border: 1px solid rgba(0,200,255,.2);
+      font-size: .8rem; color: var(--accent);
+    }
+    .tag.green {
+      background: rgba(0,255,179,.08);
+      border-color: rgba(0,255,179,.2);
+      color: var(--green);
+    }
+    .tag.purple {
+      background: rgba(123,94,167,.12);
+      border-color: rgba(123,94,167,.3);
+      color: #c4a8e8;
+    }
+    .btn-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      padding: .75rem 1.8rem;
+      border-radius: 8px;
+      font-size: .95rem; font-weight: 600;
+      text-decoration: none; cursor: pointer;
+      transition: all .2s;
+      display: inline-flex; align-items: center; gap: .5rem;
+    }
+    .btn-primary {
+      background: var(--accent); color: #0a0e1a;
+    }
+    .btn-primary:hover { background: #33d6ff; transform: translateY(-2px); }
+    .btn-outline {
+      border: 1px solid var(--border); color: var(--text);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    /* ── SECTIONS ── */
+    section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .75rem; letter-spacing: .12em; color: var(--accent);
+      text-transform: uppercase; margin-bottom: .5rem;
+      font-weight: 400;
+    }
+    h2 {
+      font-size: 2rem; font-weight: 700; margin-bottom: 1rem;
+      letter-spacing: -.02em;
+    }
+    h2 span { color: var(--accent); }
+    .divider {
+      width: 48px; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 2px; margin-bottom: 2.5rem;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+    }
+    .about-text p { color: var(--muted); margin-bottom: 1rem; }
+    .about-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .stat-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 1.2rem; text-align: center;
+    }
+    .stat-num { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
+    .stat-label { font-size: .8rem; color: var(--muted); }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--bg2); padding: 5rem 2rem; }
+    #skills > * { max-width: 1100px; margin: 0 auto; }
+    .skills-wrapper { max-width: 1100px; margin: 0 auto; }
+    .skill-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 1.2rem; }
+    .skill-group {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .skill-group h3 {
+      font-size: .85rem; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: .5rem;
+    }
+    .skill-list { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .skill-pill {
+      padding: .25rem .65rem; border-radius: 6px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border);
+      font-size: .8rem; color: var(--muted);
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1.5rem; }
+    .project-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 1.8rem; position: relative; overflow: hidden;
+      transition: border-color .2s, transform .2s;
+    }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .project-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+    .project-icon { font-size: 1.8rem; margin-bottom: .8rem; }
+    .project-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .6rem; }
+    .project-card p { color: var(--muted); font-size: .9rem; margin-bottom: 1rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .project-tag {
+      padding: .2rem .55rem; border-radius: 4px;
+      background: rgba(0,200,255,.08); border: 1px solid rgba(0,200,255,.15);
+      font-size: .75rem; color: var(--accent);
+    }
+
+    /* ── EXPERIENCE ── */
+    .timeline { display: flex; flex-direction: column; gap: 1.5rem; }
+    .timeline-item {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 1.5rem 1.8rem;
+      display: grid; grid-template-columns: auto 1fr; gap: 1.2rem; align-items: start;
+    }
+    .tl-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--accent); margin-top: .5rem; flex-shrink: 0;
+      box-shadow: 0 0 10px var(--accent);
+    }
+    .tl-date { font-size: .8rem; color: var(--accent); font-weight: 600; margin-bottom: .2rem; }
+    .tl-title { font-size: 1rem; font-weight: 700; margin-bottom: .2rem; }
+    .tl-company { font-size: .85rem; color: var(--muted); margin-bottom: .6rem; }
+    .tl-desc { font-size: .9rem; color: var(--muted); }
+
+    /* ── CONTACT ── */
+    #contact { text-align: center; }
+    .contact-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 3rem; max-width: 550px; margin: 0 auto;
+    }
+    .contact-card p { color: var(--muted); margin-bottom: 2rem; }
+    .contact-links { display: flex; flex-direction: column; gap: .8rem; align-items: center; }
+    .contact-link {
+      display: flex; align-items: center; gap: .7rem;
+      color: var(--text); text-decoration: none; font-size: .95rem;
+      padding: .6rem 1.2rem; border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: border-color .2s, color .2s;
+      width: 100%; max-width: 320px; justify-content: center;
+    }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+    .contact-link span { font-size: 1.1rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center; padding: 2rem;
+      color: var(--muted); font-size: .8rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">&lt;ayat.merimi /&gt;</div>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#projects">Projets</a></li>
+    <li><a href="#experience">Expériences</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="grid-bg"></div>
+  <div class="hero-content">
+    <div class="badge">🔐 Disponible en alternance · Septembre 2026</div>
+    <h1>Ayat Merimi</h1>
+    <p class="hero-sub">Future Ingénieure Cybersécurité · Pentest · Dev Sécurisé · CTF</p>
+    <div class="hero-tags">
+      <span class="tag">🛡️ Cybersécurité</span>
+      <span class="tag green">⚡ Pentesting</span>
+      <span class="tag purple">🏁 CTF Player</span>
+      <span class="tag">🐍 Python / C</span>
+      <span class="tag green">🐧 Linux</span>
+      <span class="tag">🌐 Dev Sécurisé</span>
+    </div>
+    <div class="btn-row">
+      <a href="#contact" class="btn btn-primary">✉️ Me contacter</a>
+      <a href="#projects" class="btn btn-outline">🔍 Voir mes projets</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">// À propos</div>
+  <h2>Qui suis-<span>je ?</span></h2>
+  <div class="divider"></div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Passionnée par la cybersécurité offensive et défensive, je suis actuellement en BUT Informatique à l'Université de Lorraine et intégre le diplôme d'Ingénieure Informatique spécialité Cybersécurité au CNAM de Saint-Dié en 2026.</p>
+      <p>Je pratique le CTF régulièrement, j'ai réalisé plusieurs stages en développement sécurisé et tests d'intrusion, et je maîtrise un large spectre de compétences : de l'analyse de vulnérabilités au développement full-stack sécurisé, en passant par l'administration systèmes & réseaux.</p>
+      <p>Bilingue français/anglais (TOEIC C1), mobile selon le poste, et disponible pour une alternance dès septembre 2026.</p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Projets techniques réalisés</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">C1</div>
+        <div class="stat-label">Anglais · TOEIC</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">6+</div>
+        <div class="stat-label">Langages maîtrisés</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">CTF</div>
+        <div class="stat-label">Sécurité offensive active</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<div id="skills">
+  <div class="skills-wrapper">
+    <div class="section-label">// Compétences</div>
+    <h2>Stack <span>technique</span></h2>
+    <div class="divider"></div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h3>🛡️ Cybersécurité</h3>
+        <div class="skill-list">
+          <span class="skill-pill">Pentesting</span>
+          <span class="skill-pill">CTF</span>
+          <span class="skill-pill">Firewalls</span>
+          <span class="skill-pill">Cryptographie</span>
+          <span class="skill-pill">Analyse de vulnérabilités</span>
+          <span class="skill-pill">Contrôle d'accès</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>💻 Développement</h3>
+        <div class="skill-list">
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">C</span>
+          <span class="skill-pill">Java</span>
+          <span class="skill-pill">PHP</span>
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">HTML5 / CSS</span>
+          <span class="skill-pill">jQuery</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>🖥️ Systèmes & Réseaux</h3>
+        <div class="skill-list">
+          <span class="skill-pill">Linux</span>
+          <span class="skill-pill">Apache</span>
+          <span class="skill-pill">TCP/IP</span>
+          <span class="skill-pill">Client/Serveur</span>
+          <span class="skill-pill">Architecture SI</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>🗄️ Données & Gestion</h3>
+        <div class="skill-list">
+          <span class="skill-pill">SQL</span>
+          <span class="skill-pill">UML</span>
+          <span class="skill-pill">Git</span>
+          <span class="skill-pill">Trello</span>
+          <span class="skill-pill">Tests fonctionnels</span>
+          <span class="skill-pill">UI/UX</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">// Projets</div>
+  <h2>Réalisations <span>clés</span></h2>
+  <div class="divider"></div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-icon">🌱</div>
+      <h3>Plateforme Jardin de Cocagne</h3>
+      <p>Application de gestion de données (commandes, livraisons, suivi opérationnel) avec paiements sécurisés et contrôle d'accès rôles admin/client. Tableaux de bord analytiques et modules automatisés.</p>
+      <div class="project-tags">
+        <span class="project-tag">PHP</span>
+        <span class="project-tag">SQL</span>
+        <span class="project-tag">Sécurité des paiements</span>
+        <span class="project-tag">RBAC</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🚗</div>
+      <h3>Reconnaissance de plaques</h3>
+      <p>Système de détection et d'extraction de plaques d'immatriculation avec chiffrement des données et sécurisation du stockage. Focus sur la protection des données personnelles.</p>
+      <div class="project-tags">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">Cryptographie</span>
+        <span class="project-tag">Computer Vision</span>
+        <span class="project-tag">RGPD</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🔗</div>
+      <h3>Microservice REST sécurisé</h3>
+      <p>Développement d'un microservice (authentification, publications, persistance) pour une plateforme en production avec 500+ utilisateurs. Validation des entrées, RBAC, tests d'intégration.</p>
+      <div class="project-tags">
+        <span class="project-tag">API REST</span>
+        <span class="project-tag">Auth / JWT</span>
+        <span class="project-tag">Tests d'intégration</span>
+        <span class="project-tag">Sécurité applicative</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">📊</div>
+      <h3>Analyse de données (Netflix, Immobilier)</h3>
+      <p>Traitement, nettoyage et analyse de jeux de données volumineux. Création de tableaux de bord analytiques et visualisations pour l'exploitation des données.</p>
+      <div class="project-tags">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">Data Analysis</span>
+        <span class="project-tag">Dashboards</span>
+        <span class="project-tag">SQL</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">// Parcours</div>
+  <h2>Expériences & <span>Formation</span></h2>
+  <div class="divider"></div>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="tl-dot"></div>
+      <div>
+        <div class="tl-date">2026 → 2029</div>
+        <div class="tl-title">Diplôme d'Ingénieure Informatique – Cybersécurité</div>
+        <div class="tl-company">CNAM Saint-Dié-des-Vosges</div>
+        <div class="tl-desc">Formation d'ingénieure en alternance avec spécialisation cybersécurité.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="tl-dot"></div>
+      <div>
+        <div class="tl-date">Stage</div>
+        <div class="tl-title">Stagiaire Développeur Back-End</div>
+        <div class="tl-company">EtudiantProConnect</div>
+        <div class="tl-desc">Développement d'un microservice REST pour une plateforme 500+ utilisateurs. Focus sécurité applicative : validation des entrées, contrôle d'accès, tests d'intégration.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="tl-dot"></div>
+      <div>
+        <div class="tl-date">Stage</div>
+        <div class="tl-title">Stagiaire Informatique – Développement Web</div>
+        <div class="tl-company">Ministère de l'Éducation Nationale</div>
+        <div class="tl-desc">Tests de sécurité applicative, validation fonctionnelle sur une plateforme PHP en production (architecture MVC). Conception BDD, développement back-end et front-end.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="tl-dot"></div>
+      <div>
+        <div class="tl-date">2023 → 2026</div>
+        <div class="tl-title">BUT Informatique – Parcours Réalisation d'Applications</div>
+        <div class="tl-company">Université de Lorraine</div>
+        <div class="tl-desc">Formation généraliste informatique avec spécialisation développement et sécurité applicative.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">// Contact</div>
+  <h2>Travaillons <span>ensemble</span></h2>
+  <div class="divider" style="margin: 0 auto 2.5rem;"></div>
+  <div class="contact-card">
+    <p>Je recherche une alternance en cybersécurité à partir de septembre 2026. N'hésitez pas à me contacter !</p>
+    <div class="contact-links">
+      <a href="mailto:ayamerimi2016@gmail.com" class="contact-link">
+        <span>✉️</span> ayamerimi2016@gmail.com
+      </a>
+      <a href="tel:+33753641049" class="contact-link">
+        <span>📱</span> +33 7 53 64 10 49
+      </a>
+      <a href="https://linkedin.com/in/ayat-merimi" target="_blank" class="contact-link">
+        <span>💼</span> linkedin.com/in/ayat-merimi
+      </a>
+      <a href="https://github.com/merimia" target="_blank" class="contact-link">
+        <span>🐙</span> github.com/merimia
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Ayat Merimi · Conçu avec passion pour la cybersécurité 🔐</p>
+</footer>
+
+</body>
+</html>
