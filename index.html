@@ -76,7 +76,7 @@
 
     /* SKILLS */
     #skills{ background:var(--bg2); }
-    .skill-groups{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.3rem; }
+    .skill-groups{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; }
     .skill-group{ background:var(--card); border:1px solid var(--border); border-radius:14px; padding:1.5rem; transition:.3s; }
     .skill-group:hover{ border-color:var(--pink); transform:translateY(-5px); box-shadow:0 0 25px rgba(255,79,216,.10); }
     .skill-group h3{ color:var(--accent); margin-bottom:1rem; font-size:.9rem; text-transform:uppercase; letter-spacing:.08em; }
@@ -215,31 +215,24 @@
   <div class="divider"></div>
   <div class="skill-groups">
     <div class="skill-group fade-in">
-      <h3>💻 Développement</h3>
+      <h3>💻 Langages</h3>
       <div class="skill-list">
         <span class="skill-pill">Python</span>
-        <span class="skill-pill">C</span>
-        <span class="skill-pill">C# / .NET</span>
+        <span class="skill-pill">C / C#</span>
         <span class="skill-pill">Java</span>
         <span class="skill-pill">PHP</span>
         <span class="skill-pill">JavaScript</span>
-        <span class="skill-pill">Node.js</span>
-        <span class="skill-pill">Angular</span>
         <span class="skill-pill">Swift</span>
-        <span class="skill-pill">HTML5/CSS</span>
       </div>
     </div>
     <div class="skill-group fade-in">
       <h3>👁️ Vision & Automatisation</h3>
       <div class="skill-list">
         <span class="skill-pill">OpenCV</span>
-        <span class="skill-pill">Computer Vision</span>
         <span class="skill-pill">Traitement d'image</span>
-        <span class="skill-pill">GitLab CI/CD</span>
+        <span class="skill-pill">CI/CD GitLab</span>
         <span class="skill-pill">Docker</span>
-        <span class="skill-pill">Tests unitaires</span>
         <span class="skill-pill">Virtualisation</span>
-        <span class="skill-pill">Automatisme</span>
       </div>
     </div>
     <div class="skill-group fade-in">
@@ -249,46 +242,20 @@
         <span class="skill-pill">CTF</span>
         <span class="skill-pill">OWASP</span>
         <span class="skill-pill">Cryptographie</span>
-        <span class="skill-pill">Analyse de vulnérabilités</span>
         <span class="skill-pill">AppSec</span>
-        <span class="skill-pill">JWT / Auth</span>
       </div>
     </div>
     <div class="skill-group fade-in">
-      <h3>🐧 Systèmes & Réseaux</h3>
+      <h3>🐧 Systèmes & Outils</h3>
       <div class="skill-list">
         <span class="skill-pill">Linux</span>
         <span class="skill-pill">TCP/IP</span>
-        <span class="skill-pill">Apache</span>
-        <span class="skill-pill">Client/Serveur</span>
         <span class="skill-pill">REST API</span>
         <span class="skill-pill">Microservices</span>
-      </div>
-    </div>
-    <div class="skill-group fade-in">
-      <h3>🗄️ Données & Outils</h3>
-      <div class="skill-list">
         <span class="skill-pill">SQL / MySQL</span>
-        <span class="skill-pill">MariaDB</span>
-        <span class="skill-pill">Power BI</span>
-        <span class="skill-pill">Git</span>
-        <span class="skill-pill">Visual Studio</span>
-        <span class="skill-pill">Android Studio</span>
+        <span class="skill-pill">VS Code</span>
         <span class="skill-pill">Xcode</span>
-        <span class="skill-pill">Unity</span>
         <span class="skill-pill">Figma</span>
-      </div>
-    </div>
-    <div class="skill-group fade-in">
-      <h3>📐 Méthodes</h3>
-      <div class="skill-list">
-        <span class="skill-pill">Agile / Scrum</span>
-        <span class="skill-pill">UML</span>
-        <span class="skill-pill">Architecture MVC</span>
-        <span class="skill-pill">RBAC</span>
-        <span class="skill-pill">UI/UX</span>
-        <span class="skill-pill">Cahier des charges</span>
-        <span class="skill-pill">Documentation</span>
       </div>
     </div>
   </div>
@@ -300,26 +267,25 @@
   <h2>Réalisations <span>principales</span></h2>
   <div class="divider"></div>
 
-  <!-- HIGHLIGHT : vision industrielle -->
-  <div class="highlight-card fade-in">
-    <div class="featured-label">⭐ PROJET CLÉ · VISION INDUSTRIELLE</div>
-    <h3>👁️ Système de reconnaissance de plaques d'immatriculation</h3>
-    <p>Développement complet d'un système de détection et d'extraction automatique de plaques d'immatriculation. Traitement d'image en temps réel, extraction du texte, chiffrement et stockage sécurisé des données en base. Protection des données personnelles conforme RGPD.</p>
-    <div class="project-tags">
-      <span class="project-tag blue">Python</span>
-      <span class="project-tag blue">OpenCV</span>
-      <span class="project-tag blue">Computer Vision</span>
-      <span class="project-tag blue">Traitement d'image</span>
-      <span class="project-tag">MySQL</span>
-      <span class="project-tag">Cryptographie</span>
-      <span class="project-tag">RGPD</span>
-    </div>
-  </div>
-
   <div class="projects-grid">
 
     <div class="project-card featured fade-in">
-      <div class="featured-label">⭐ PROJET CLÉ · FULL STACK</div>
+      <div class="featured-label">⭐ VISION INDUSTRIELLE</div>
+      <div class="project-icon">👁️</div>
+      <h3>Reconnaissance de plaques d'immatriculation</h3>
+      <p>Détection et extraction automatique de plaques via traitement d'image en temps réel. Chiffrement et stockage sécurisé des données en base. Conforme RGPD.</p>
+      <div class="project-tags">
+        <span class="project-tag blue">Python</span>
+        <span class="project-tag blue">OpenCV</span>
+        <span class="project-tag blue">Computer Vision</span>
+        <span class="project-tag">MySQL</span>
+        <span class="project-tag">Cryptographie</span>
+        <span class="project-tag">RGPD</span>
+      </div>
+    </div>
+
+    <div class="project-card featured fade-in">
+      <div class="featured-label">⭐ FULL STACK</div>
       <div class="project-icon">🌱</div>
       <h3>Plateforme « Jardin de Cocagne »</h3>
       <p>Application web & mobile complète : interface client (panier, paiement, commande), interface admin (livraisons, itinéraires, suivi), tableaux de bord analytiques. Application Android native pour les clients avec suivi de commande et itinéraires en temps réel.</p>
@@ -335,7 +301,7 @@
     </div>
 
     <div class="project-card featured fade-in">
-      <div class="featured-label">⭐ PROJET CLÉ · BACK-END SÉCURISÉ</div>
+      <div class="featured-label">⭐ BACK-END SÉCURISÉ</div>
       <div class="project-icon">🔐</div>
       <h3>Microservice REST sécurisé</h3>
       <p>Développement d'un microservice en production pour EtudiantProConnect (500+ utilisateurs actifs). Authentification JWT, validation des entrées, contrôle d'accès rôles, gestion des publications et persistance sécurisée des données. Tests unitaires et d'intégration.</p>
