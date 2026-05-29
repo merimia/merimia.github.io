@@ -3,848 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Ayat Merimi – Future Ingénieure Cybersécurité</title>
-
-  <meta
-    name="description"
-    content="Portfolio cybersécurité de Ayat Merimi – Pentest, développement sécurisé, CTF, Linux et sécurité applicative."
-  />
-
+  <meta name="description" content="Portfolio cybersécurité de Ayat Merimi – Pentest, développement sécurisé, CTF, Linux et sécurité applicative." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
-    rel="stylesheet"
-  >
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
-
     :root {
-      --bg: #0a0e1a;
-      --bg2: #10182b;
-      --card: #131b2d;
-
-      --accent: #00c8ff;
-      --accent2: #ff4fd8;
-
-      --pink: #ff4fd8;
-      --pink-soft: rgba(255,79,216,.12);
-
-      --green: #00ffb3;
-
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-
-      --border: #22304b;
+      --bg: #0a0e1a; --bg2: #10182b; --card: #131b2d;
+      --accent: #00c8ff; --accent2: #ff4fd8;
+      --pink: #ff4fd8; --pink-soft: rgba(255,79,216,.12);
+      --green: #00ffb3; --text: #e2e8f0; --muted: #94a3b8; --border: #22304b;
     }
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:'Inter',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.7;
-      overflow-x:hidden;
-      -webkit-font-smoothing:antialiased;
-    }
-
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-
-      background:
-        linear-gradient(
-          rgba(255,255,255,.015) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,.015) 1px,
-          transparent 1px
-        );
-
-      background-size:40px 40px;
-      opacity:.35;
-      z-index:-1;
-    }
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{ font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+    body::before{ content:""; position:fixed; inset:0; pointer-events:none; background: linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px); background-size:40px 40px; opacity:.35; z-index:-1; }
 
     /* NAV */
-
-    nav{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-
-      padding:1rem 2rem;
-
-      background:rgba(10,14,26,.85);
-
-      backdrop-filter:blur(12px);
-
-      border-bottom:1px solid var(--border);
-
-      z-index:1000;
-    }
-
-    .logo{
-      font-family:'JetBrains Mono', monospace;
-      color:var(--accent);
-      font-weight:700;
-      font-size:1rem;
-    }
-
-    .nav-links{
-      display:flex;
-      gap:2rem;
-      list-style:none;
-    }
-
-    .nav-links a{
-      text-decoration:none;
-      color:var(--muted);
-      font-size:.92rem;
-      transition:.25s;
-    }
-
-    .nav-links a:hover{
-      color:var(--pink);
-    }
+    nav{ position:fixed; top:0; left:0; right:0; display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; background:rgba(10,14,26,.85); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); z-index:1000; }
+    .logo{ font-family:'JetBrains Mono',monospace; color:var(--accent); font-weight:700; font-size:1rem; }
+    .nav-links{ display:flex; gap:2rem; list-style:none; }
+    .nav-links a{ text-decoration:none; color:var(--muted); font-size:.92rem; transition:.25s; }
+    .nav-links a:hover{ color:var(--pink); }
 
     /* HERO */
-
-    #hero{
-      min-height:100vh;
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      text-align:center;
-
-      position:relative;
-
-      padding:7rem 2rem 4rem;
-
-      overflow:hidden;
-
-      background:
-        radial-gradient(
-          circle at 20% 30%,
-          rgba(0,200,255,.12),
-          transparent 30%
-        ),
-
-        radial-gradient(
-          circle at 80% 20%,
-          rgba(255,79,216,.10),
-          transparent 30%
-        );
-    }
-
-    .hero-content{
-      max-width:850px;
-      position:relative;
-      z-index:2;
-    }
-
-    .badge{
-      display:inline-block;
-
-      padding:.45rem 1rem;
-
-      border-radius:999px;
-
-      border:1px solid rgba(255,79,216,.45);
-
-      background:rgba(255,79,216,.08);
-
-      color:#ff9bea;
-
-      font-size:.82rem;
-
-      margin-bottom:1.5rem;
-
-      animation:pulse 2.5s infinite;
-    }
-
-    @keyframes pulse{
-      0%,100%{
-        box-shadow:0 0 0 0 rgba(255,79,216,.18);
-      }
-
-      50%{
-        box-shadow:0 0 0 12px rgba(255,79,216,0);
-      }
-    }
-
-    h1{
-      font-size:clamp(3rem,7vw,5rem);
-
-      font-weight:800;
-
-      line-height:1.05;
-
-      margin-bottom:1rem;
-
-      letter-spacing:-.03em;
-
-      background:
-        linear-gradient(
-          135deg,
-          #ffffff,
-          var(--accent),
-          var(--pink)
-        );
-
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .hero-sub{
-      color:var(--muted);
-      font-size:1.15rem;
-      margin-bottom:2rem;
-    }
-
-    .hero-tags{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:.8rem;
-
-      margin-bottom:2rem;
-    }
-
-    .tag{
-      padding:.4rem .85rem;
-
-      border-radius:8px;
-
-      background:rgba(0,200,255,.08);
-
-      border:1px solid rgba(0,200,255,.18);
-
-      color:var(--accent);
-
-      font-size:.82rem;
-    }
-
-    .tag.pink{
-      background:rgba(255,79,216,.10);
-      border:1px solid rgba(255,79,216,.25);
-      color:#ff9bea;
-    }
-
-    .tag.green{
-      background:rgba(0,255,179,.08);
-      border:1px solid rgba(0,255,179,.18);
-      color:var(--green);
-    }
-
-    .btn-row{
-      display:flex;
-      gap:1rem;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      position:relative;
-
-      overflow:hidden;
-
-      padding:.85rem 1.7rem;
-
-      border-radius:10px;
-
-      font-size:.92rem;
-      font-weight:600;
-
-      text-decoration:none;
-
-      transition:.3s;
-
-      display:inline-flex;
-      align-items:center;
-      gap:.5rem;
-    }
-
-    .btn::before{
-      content:"";
-
-      position:absolute;
-
-      top:0;
-      left:-100%;
-
-      width:100%;
-      height:100%;
-
-      background:
-        linear-gradient(
-          120deg,
-          transparent,
-          rgba(255,255,255,.18),
-          transparent
-        );
-
-      transition:.7s;
-    }
-
-    .btn:hover::before{
-      left:100%;
-    }
-
-    .btn-primary{
-      background:linear-gradient(
-        135deg,
-        var(--accent),
-        var(--pink)
-      );
-
-      color:#08111f;
-    }
-
-    .btn-primary:hover{
-      transform:translateY(-3px);
-      box-shadow:0 0 20px rgba(255,79,216,.25);
-    }
-
-    .btn-outline{
-      border:1px solid var(--border);
-      color:var(--text);
-      background:rgba(255,255,255,.02);
-    }
-
-    .btn-outline:hover{
-      border-color:var(--pink);
-      color:var(--pink);
-      transform:translateY(-3px);
-    }
+    #hero{ min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; position:relative; padding:7rem 2rem 4rem; overflow:hidden; background: radial-gradient(circle at 20% 30%,rgba(0,200,255,.12),transparent 30%), radial-gradient(circle at 80% 20%,rgba(255,79,216,.10),transparent 30%); }
+    .hero-content{ max-width:850px; position:relative; z-index:2; }
+    .badge{ display:inline-block; padding:.45rem 1rem; border-radius:999px; border:1px solid rgba(255,79,216,.45); background:rgba(255,79,216,.08); color:#ff9bea; font-size:.82rem; margin-bottom:1.5rem; animation:pulse 2.5s infinite; }
+    @keyframes pulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(255,79,216,.18); } 50%{ box-shadow:0 0 0 12px rgba(255,79,216,0); } }
+    h1{ font-size:clamp(3rem,7vw,5rem); font-weight:800; line-height:1.05; margin-bottom:1rem; letter-spacing:-.03em; background:linear-gradient(135deg,#ffffff,var(--accent),var(--pink)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .hero-sub{ color:var(--muted); font-size:1.15rem; margin-bottom:2rem; }
+    .hero-tags{ display:flex; flex-wrap:wrap; justify-content:center; gap:.8rem; margin-bottom:2rem; }
+    .tag{ padding:.4rem .85rem; border-radius:8px; background:rgba(0,200,255,.08); border:1px solid rgba(0,200,255,.18); color:var(--accent); font-size:.82rem; }
+    .tag.pink{ background:rgba(255,79,216,.10); border:1px solid rgba(255,79,216,.25); color:#ff9bea; }
+    .tag.green{ background:rgba(0,255,179,.08); border:1px solid rgba(0,255,179,.18); color:var(--green); }
+    .btn-row{ display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .btn{ position:relative; overflow:hidden; padding:.85rem 1.7rem; border-radius:10px; font-size:.92rem; font-weight:600; text-decoration:none; transition:.3s; display:inline-flex; align-items:center; gap:.5rem; }
+    .btn::before{ content:""; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(120deg,transparent,rgba(255,255,255,.18),transparent); transition:.7s; }
+    .btn:hover::before{ left:100%; }
+    .btn-primary{ background:linear-gradient(135deg,var(--accent),var(--pink)); color:#08111f; }
+    .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 0 20px rgba(255,79,216,.25); }
+    .btn-outline{ border:1px solid var(--border); color:var(--text); background:rgba(255,255,255,.02); }
+    .btn-outline:hover{ border-color:var(--pink); color:var(--pink); transform:translateY(-3px); }
 
     /* TERMINAL */
+    .terminal{ margin-top:3rem; background:#0d1117; border:1px solid var(--border); border-radius:14px; overflow:hidden; text-align:left; box-shadow:0 0 35px rgba(255,79,216,.08); }
+    .terminal-header{ display:flex; gap:.5rem; padding:.9rem 1rem; background:#161b22; }
+    .terminal-header span{ width:12px; height:12px; border-radius:50%; }
+    .terminal-header span:nth-child(1){ background:#ff5f56; }
+    .terminal-header span:nth-child(2){ background:#ffbd2e; }
+    .terminal-header span:nth-child(3){ background:#27c93f; }
+    .terminal-body{ padding:1.4rem; font-family:'JetBrains Mono',monospace; font-size:.92rem; color:#d6e2f0; }
+    .terminal-body p{ margin-bottom:.6rem; }
+    .green{ color:var(--green); }
 
-    .terminal{
-      margin-top:3rem;
-
-      background:#0d1117;
-
-      border:1px solid var(--border);
-
-      border-radius:14px;
-
-      overflow:hidden;
-
-      text-align:left;
-
-      box-shadow:0 0 35px rgba(255,79,216,.08);
-    }
-
-    .terminal-header{
-      display:flex;
-      gap:.5rem;
-
-      padding:.9rem 1rem;
-
-      background:#161b22;
-    }
-
-    .terminal-header span{
-      width:12px;
-      height:12px;
-      border-radius:50%;
-    }
-
-    .terminal-header span:nth-child(1){
-      background:#ff5f56;
-    }
-
-    .terminal-header span:nth-child(2){
-      background:#ffbd2e;
-    }
-
-    .terminal-header span:nth-child(3){
-      background:#27c93f;
-    }
-
-    .terminal-body{
-      padding:1.4rem;
-
-      font-family:'JetBrains Mono', monospace;
-
-      font-size:.92rem;
-
-      color:#d6e2f0;
-    }
-
-    .terminal-body p{
-      margin-bottom:.6rem;
-    }
-
-    .green{
-      color:var(--green);
-    }
-
-    /* GENERAL SECTIONS */
-
-    section{
-      max-width:1150px;
-      margin:auto;
-      padding:5rem 2rem;
-    }
-
-    .section-label{
-      font-family:'JetBrains Mono', monospace;
-
-      font-size:.75rem;
-
-      letter-spacing:.12em;
-
-      color:var(--pink);
-
-      text-transform:uppercase;
-
-      margin-bottom:.7rem;
-    }
-
-    h2{
-      font-size:2.3rem;
-      margin-bottom:1rem;
-    }
-
-    h2 span{
-      color:var(--pink);
-    }
-
-    .divider{
-      width:70px;
-      height:4px;
-
-      border-radius:4px;
-
-      background:
-        linear-gradient(
-          90deg,
-          var(--accent),
-          var(--pink)
-        );
-
-      margin-bottom:2.5rem;
-    }
+    /* SECTIONS */
+    section{ max-width:1150px; margin:auto; padding:5rem 2rem; }
+    .section-label{ font-family:'JetBrains Mono',monospace; font-size:.75rem; letter-spacing:.12em; color:var(--pink); text-transform:uppercase; margin-bottom:.7rem; }
+    h2{ font-size:2.3rem; margin-bottom:1rem; }
+    h2 span{ color:var(--pink); }
+    .divider{ width:70px; height:4px; border-radius:4px; background:linear-gradient(90deg,var(--accent),var(--pink)); margin-bottom:2.5rem; }
 
     /* ABOUT */
-
-    .about-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:3rem;
-      align-items:center;
-    }
-
-    .about-text p{
-      color:var(--muted);
-      margin-bottom:1rem;
-    }
-
-    .about-stats{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:1rem;
-    }
-
-    .stat-card{
-      background:var(--card);
-
-      border:1px solid var(--border);
-
-      border-radius:14px;
-
-      padding:1.5rem;
-
-      text-align:center;
-
-      transition:.3s;
-    }
-
-    .stat-card:hover{
-      transform:translateY(-4px);
-
-      border-color:var(--pink);
-
-      box-shadow:0 0 25px rgba(255,79,216,.12);
-    }
-
-    .stat-num{
-      font-size:2rem;
-      font-weight:800;
-      color:var(--pink);
-    }
-
-    .stat-label{
-      font-size:.82rem;
-      color:var(--muted);
-    }
+    .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
+    .about-text p{ color:var(--muted); margin-bottom:1rem; }
+    .about-stats{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .stat-card{ background:var(--card); border:1px solid var(--border); border-radius:14px; padding:1.5rem; text-align:center; transition:.3s; }
+    .stat-card:hover{ transform:translateY(-4px); border-color:var(--pink); box-shadow:0 0 25px rgba(255,79,216,.12); }
+    .stat-num{ font-size:2rem; font-weight:800; color:var(--pink); }
+    .stat-label{ font-size:.82rem; color:var(--muted); }
 
     /* SKILLS */
+    #skills{ background:var(--bg2); }
+    .skill-groups{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.3rem; }
+    .skill-group{ background:var(--card); border:1px solid var(--border); border-radius:14px; padding:1.5rem; transition:.3s; }
+    .skill-group:hover{ border-color:var(--pink); transform:translateY(-5px); box-shadow:0 0 25px rgba(255,79,216,.10); }
+    .skill-group h3{ color:var(--accent); margin-bottom:1rem; font-size:.9rem; text-transform:uppercase; letter-spacing:.08em; }
+    .skill-list{ display:flex; flex-wrap:wrap; gap:.55rem; }
+    .skill-pill{ padding:.35rem .7rem; border-radius:7px; border:1px solid var(--border); background:rgba(255,255,255,.03); color:var(--muted); font-size:.8rem; }
 
-    #skills{
-      background:var(--bg2);
-    }
-
-    .skill-groups{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-      gap:1.3rem;
-    }
-
-    .skill-group{
-      background:var(--card);
-
-      border:1px solid var(--border);
-
-      border-radius:14px;
-
-      padding:1.5rem;
-
-      transition:.3s;
-    }
-
-    .skill-group:hover{
-      border-color:var(--pink);
-
-      transform:translateY(-5px);
-
-      box-shadow:0 0 25px rgba(255,79,216,.10);
-    }
-
-    .skill-group h3{
-      color:var(--accent);
-
-      margin-bottom:1rem;
-
-      font-size:.9rem;
-
-      text-transform:uppercase;
-
-      letter-spacing:.08em;
-    }
-
-    .skill-list{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.55rem;
-    }
-
-    .skill-pill{
-      padding:.35rem .7rem;
-
-      border-radius:7px;
-
-      border:1px solid var(--border);
-
-      background:rgba(255,255,255,.03);
-
-      color:var(--muted);
-
-      font-size:.8rem;
-    }
+    /* HIGHLIGHT CARD */
+    .highlight-card{ background:linear-gradient(135deg,rgba(0,200,255,.07),rgba(255,79,216,.07)); border:1px solid rgba(0,200,255,.25); border-radius:16px; padding:2rem; margin-bottom:2rem; position:relative; overflow:hidden; }
+    .highlight-card::before{ content:""; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--accent),var(--pink)); }
+    .highlight-card h3{ color:var(--accent); margin-bottom:.5rem; font-size:1.1rem; }
+    .highlight-card p{ color:var(--muted); font-size:.93rem; margin-bottom:1rem; }
 
     /* PROJECTS */
-
-    .projects-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:1.5rem;
-    }
-
-    .project-card{
-      background:var(--card);
-
-      border:1px solid var(--border);
-
-      border-radius:16px;
-
-      padding:1.8rem;
-
-      position:relative;
-
-      overflow:hidden;
-
-      transition:.3s;
-    }
-
-    .project-card::before{
-      content:"";
-
-      position:absolute;
-
-      top:0;
-      left:0;
-      right:0;
-
-      height:3px;
-
-      background:
-        linear-gradient(
-          90deg,
-          var(--accent),
-          var(--pink)
-        );
-    }
-
-    .project-card:hover{
-      transform:translateY(-6px);
-
-      border-color:var(--pink);
-
-      box-shadow:0 0 35px rgba(255,79,216,.10);
-    }
-
-    .project-icon{
-      font-size:2rem;
-      margin-bottom:1rem;
-    }
-
-    .project-card h3{
-      margin-bottom:.7rem;
-      font-size:1.08rem;
-    }
-
-    .project-card p{
-      color:var(--muted);
-      font-size:.92rem;
-      margin-bottom:1rem;
-    }
-
-    .project-tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.45rem;
-    }
-
-    .project-tag{
-      padding:.25rem .6rem;
-
-      border-radius:6px;
-
-      background:rgba(255,79,216,.08);
-
-      border:1px solid rgba(255,79,216,.18);
-
-      color:#ff9bea;
-
-      font-size:.74rem;
-    }
+    .projects-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem; }
+    .project-card{ background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.8rem; position:relative; overflow:hidden; transition:.3s; }
+    .project-card::before{ content:""; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--accent),var(--pink)); }
+    .project-card:hover{ transform:translateY(-6px); border-color:var(--pink); box-shadow:0 0 35px rgba(255,79,216,.10); }
+    .project-card.featured{ border-color:rgba(0,200,255,.35); box-shadow:0 0 25px rgba(0,200,255,.08); }
+    .project-card.featured::before{ background:linear-gradient(90deg,var(--accent),var(--green)); }
+    .featured-label{ display:inline-block; font-size:.72rem; padding:.2rem .65rem; border-radius:5px; background:rgba(0,200,255,.12); border:1px solid rgba(0,200,255,.25); color:var(--accent); margin-bottom:.75rem; font-weight:600; letter-spacing:.05em; }
+    .project-icon{ font-size:2rem; margin-bottom:1rem; }
+    .project-card h3{ margin-bottom:.7rem; font-size:1.08rem; }
+    .project-card p{ color:var(--muted); font-size:.92rem; margin-bottom:1rem; }
+    .project-tags{ display:flex; flex-wrap:wrap; gap:.45rem; }
+    .project-tag{ padding:.25rem .6rem; border-radius:6px; background:rgba(255,79,216,.08); border:1px solid rgba(255,79,216,.18); color:#ff9bea; font-size:.74rem; }
+    .project-tag.blue{ background:rgba(0,200,255,.08); border:1px solid rgba(0,200,255,.18); color:var(--accent); }
+    .project-tag.green{ background:rgba(0,255,179,.08); border:1px solid rgba(0,255,179,.18); color:var(--green); }
 
     /* TIMELINE */
-
-    .timeline{
-      display:flex;
-      flex-direction:column;
-      gap:1.4rem;
-    }
-
-    .timeline-item{
-      background:var(--card);
-
-      border:1px solid var(--border);
-
-      border-radius:14px;
-
-      padding:1.6rem;
-
-      display:grid;
-
-      grid-template-columns:auto 1fr;
-
-      gap:1rem;
-
-      transition:.3s;
-    }
-
-    .timeline-item:hover{
-      border-color:var(--pink);
-
-      transform:translateY(-4px);
-
-      box-shadow:0 0 30px rgba(255,79,216,.08);
-    }
-
-    .tl-dot{
-      width:12px;
-      height:12px;
-
-      border-radius:50%;
-
-      background:var(--pink);
-
-      margin-top:.5rem;
-
-      box-shadow:0 0 12px var(--pink);
-    }
-
-    .tl-date{
-      color:var(--pink);
-      font-size:.82rem;
-      font-weight:700;
-      margin-bottom:.3rem;
-    }
-
-    .tl-title{
-      font-weight:700;
-      margin-bottom:.25rem;
-    }
-
-    .tl-company{
-      color:var(--muted);
-      font-size:.85rem;
-      margin-bottom:.5rem;
-    }
-
-    .tl-desc{
-      color:var(--muted);
-      font-size:.92rem;
-    }
+    .timeline{ display:flex; flex-direction:column; gap:1.4rem; }
+    .timeline-item{ background:var(--card); border:1px solid var(--border); border-radius:14px; padding:1.6rem; display:grid; grid-template-columns:auto 1fr; gap:1rem; transition:.3s; }
+    .timeline-item:hover{ border-color:var(--pink); transform:translateY(-4px); box-shadow:0 0 30px rgba(255,79,216,.08); }
+    .tl-dot{ width:12px; height:12px; border-radius:50%; background:var(--pink); margin-top:.5rem; box-shadow:0 0 12px var(--pink); }
+    .tl-date{ color:var(--pink); font-size:.82rem; font-weight:700; margin-bottom:.3rem; }
+    .tl-title{ font-weight:700; margin-bottom:.25rem; }
+    .tl-company{ color:var(--muted); font-size:.85rem; margin-bottom:.5rem; }
+    .tl-desc{ color:var(--muted); font-size:.92rem; }
 
     /* CONTACT */
+    #contact{ text-align:center; }
+    .contact-card{ background:var(--card); border:1px solid var(--border); border-radius:18px; padding:3rem; max-width:650px; margin:auto; }
+    .contact-card p{ color:var(--muted); margin-bottom:2rem; }
+    .contact-links{ display:flex; flex-direction:column; gap:1rem; align-items:center; }
+    .contact-link{ width:100%; max-width:350px; display:flex; align-items:center; justify-content:center; gap:.7rem; padding:.8rem 1rem; border-radius:10px; text-decoration:none; color:var(--text); border:1px solid var(--border); transition:.25s; }
+    .contact-link:hover{ border-color:var(--pink); color:var(--pink); box-shadow:0 0 18px rgba(255,79,216,.10); }
+    footer{ border-top:1px solid var(--border); text-align:center; padding:2rem; color:var(--muted); font-size:.82rem; }
 
-    #contact{
-      text-align:center;
-    }
-
-    .contact-card{
-      background:var(--card);
-
-      border:1px solid var(--border);
-
-      border-radius:18px;
-
-      padding:3rem;
-
-      max-width:650px;
-
-      margin:auto;
-    }
-
-    .contact-card p{
-      color:var(--muted);
-      margin-bottom:2rem;
-    }
-
-    .contact-links{
-      display:flex;
-      flex-direction:column;
-      gap:1rem;
-      align-items:center;
-    }
-
-    .contact-link{
-      width:100%;
-      max-width:350px;
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:.7rem;
-
-      padding:.8rem 1rem;
-
-      border-radius:10px;
-
-      text-decoration:none;
-
-      color:var(--text);
-
-      border:1px solid var(--border);
-
-      transition:.25s;
-    }
-
-    .contact-link:hover{
-      border-color:var(--pink);
-      color:var(--pink);
-      box-shadow:0 0 18px rgba(255,79,216,.10);
-    }
-
-    footer{
-      border-top:1px solid var(--border);
-
-      text-align:center;
-
-      padding:2rem;
-
-      color:var(--muted);
-
-      font-size:.82rem;
-    }
-
-    /* SCROLL ANIMATIONS */
-
-    .fade-in{
-      opacity:0;
-      transform:translateY(35px);
-      transition:all .8s ease;
-    }
-
-    .fade-in.visible{
-      opacity:1;
-      transform:translateY(0);
-    }
+    /* ANIMATIONS */
+    .fade-in{ opacity:0; transform:translateY(35px); transition:all .8s ease; }
+    .fade-in.visible{ opacity:1; transform:translateY(0); }
 
     /* RESPONSIVE */
-
     @media(max-width:768px){
-
-      nav{
-        padding:1rem;
-      }
-
-      .nav-links{
-        display:none;
-      }
-
-      .about-grid{
-        grid-template-columns:1fr;
-      }
-
-      .about-stats{
-        grid-template-columns:1fr 1fr;
-      }
-
-      .contact-card{
-        padding:2rem 1.5rem;
-      }
-
+      nav{ padding:1rem; }
+      .nav-links{ display:none; }
+      .about-grid{ grid-template-columns:1fr; }
+      .about-stats{ grid-template-columns:1fr 1fr; }
+      .contact-card{ padding:2rem 1.5rem; }
     }
-
   </style>
 </head>
-
 <body>
-
-<!-- NAV -->
 
 <nav>
   <div class="logo">&lt;ayat.merimi /&gt;</div>
-
   <ul class="nav-links">
     <li><a href="#about">À propos</a></li>
     <li><a href="#skills">Compétences</a></li>
@@ -856,692 +153,400 @@
 </nav>
 
 <!-- HERO -->
-
 <section id="hero">
-
   <div class="hero-content fade-in">
-
-    <div class="badge">
-      🔐 Disponible en alternance · Septembre 2026
-    </div>
-
+    <div class="badge">🔐 Disponible en alternance · Septembre 2026</div>
     <h1>Ayat Merimi</h1>
-
-    <p class="hero-sub">
-      Future Ingénieure Cybersécurité · Pentest · Dev Sécurisé · CTF
-    </p>
-
+    <p class="hero-sub">Future Ingénieure · Développement · Cybersécurité · Vision & Automatisation</p>
     <div class="hero-tags">
-      <span class="tag">🛡️ Cybersécurité</span>
+      <span class="tag">💻 Développement Full Stack</span>
       <span class="tag green">⚡ Pentesting</span>
       <span class="tag pink">🏁 CTF Player</span>
-      <span class="tag">🐍 Python / C</span>
+      <span class="tag">🐍 Python / C / C#</span>
       <span class="tag green">🐧 Linux</span>
-      <span class="tag pink">🌐 AppSec</span>
+      <span class="tag pink">👁️ Vision industrielle</span>
+      <span class="tag">⚙️ Automatisation CI/CD</span>
     </div>
-
     <div class="btn-row">
-
-      <a href="#contact" class="btn btn-primary">
-        ✉️ Me contacter
-      </a>
-
-      <a href="#projects" class="btn btn-outline">
-        🔍 Voir mes projets
-      </a>
-
-      <a href="cv-ayat-merimi.pdf" download class="btn btn-outline">
-        📄 Télécharger CV
-      </a>
-
+      <a href="#contact" class="btn btn-primary">✉️ Me contacter</a>
+      <a href="#projects" class="btn btn-outline">🔍 Voir mes projets</a>
+      <a href="cv-ayat-merimi.pdf" download class="btn btn-outline">📄 Télécharger CV</a>
     </div>
-
-    <!-- TERMINAL -->
-
     <div class="terminal">
-
-      <div class="terminal-header">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
+      <div class="terminal-header"><span></span><span></span><span></span></div>
       <div class="terminal-body">
-
         <p><span class="green">$ whoami</span></p>
         <p>ayat_merimi</p>
-
-        <p><span class="green">$ focus</span></p>
-        <p>pentest · appsec · ctf · secure_dev</p>
-
+        <p><span class="green">$ stack</span></p>
+        <p>python · c · c# · php · java · javascript · node.js · sql</p>
+        <p><span class="green">$ domains</span></p>
+        <p>dev · appsec · vision · automatisation · ctf</p>
         <p><span class="green">$ status</span></p>
         <p>searching_alternance_2026...</p>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
 
 <!-- ABOUT -->
-
 <section id="about">
-
   <div class="section-label">// À propos</div>
-
   <h2>Qui suis-<span>je ?</span></h2>
-
   <div class="divider"></div>
-
   <div class="about-grid">
-
     <div class="about-text fade-in">
-
-      <p>
-        Passionnée par la cybersécurité offensive et défensive,
-        je suis actuellement en BUT Informatique à l'Université de Lorraine
-        et j'intégrerai le diplôme d'Ingénieure Informatique spécialité
-        Cybersécurité au CNAM de Saint-Dié en 2026.
-      </p>
-
-      <p>
-        Je pratique régulièrement les CTF, le développement sécurisé,
-        l'administration Linux et l'analyse de vulnérabilités.
-      </p>
-
-      <p>
-        Bilingue français/anglais (TOEIC C1),
-        mobile selon le poste et disponible
-        pour une alternance dès septembre 2026.
-      </p>
-
+      <p>Passionnée par le développement logiciel et la cybersécurité, je suis en fin de BUT Informatique à l'Université de Lorraine et j'intégrerai le diplôme d'Ingénieure Informatique spécialité Cybersécurité au CNAM de Saint-Dié en 2026.</p>
+      <p>J'ai développé des applications complètes de A à Z : back-end, front-end, mobile (Android, iOS), bases de données, microservices REST, pipelines CI/CD — avec une sensibilité forte pour la sécurité applicative à chaque étape.</p>
+      <p>Curieuse et polyvalente, je m'adapte rapidement à de nouveaux environnements techniques. Bilingue français/anglais (TOEIC C1), mobile selon le poste, disponible dès septembre 2026.</p>
     </div>
-
     <div class="about-stats">
-
-      <div class="stat-card fade-in">
-        <div class="stat-num">4+</div>
-        <div class="stat-label">Projets cybersécurité</div>
-      </div>
-
-      <div class="stat-card fade-in">
-        <div class="stat-num">C1</div>
-        <div class="stat-label">Anglais · TOEIC</div>
-      </div>
-
-      <div class="stat-card fade-in">
-        <div class="stat-num">CTF</div>
-        <div class="stat-label">Pratique offensive</div>
-      </div>
-
-      <div class="stat-card fade-in">
-        <div class="stat-num">Linux</div>
-        <div class="stat-label">Administration système</div>
-      </div>
-
+      <div class="stat-card fade-in"><div class="stat-num">10+</div><div class="stat-label">Projets réalisés</div></div>
+      <div class="stat-card fade-in"><div class="stat-num">C1</div><div class="stat-label">Anglais · TOEIC</div></div>
+      <div class="stat-card fade-in"><div class="stat-num">CTF</div><div class="stat-label">Pratique offensive</div></div>
+      <div class="stat-card fade-in"><div class="stat-num">Full</div><div class="stat-label">Stack dev</div></div>
     </div>
-
   </div>
-
 </section>
 
 <!-- SKILLS -->
-
 <section id="skills">
-
   <div class="section-label">// Compétences</div>
-
   <h2>Stack <span>technique</span></h2>
-
   <div class="divider"></div>
-
   <div class="skill-groups">
-
+    <div class="skill-group fade-in">
+      <h3>💻 Développement</h3>
+      <div class="skill-list">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">C</span>
+        <span class="skill-pill">C# / .NET</span>
+        <span class="skill-pill">Java</span>
+        <span class="skill-pill">PHP</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">Node.js</span>
+        <span class="skill-pill">Angular</span>
+        <span class="skill-pill">Swift</span>
+        <span class="skill-pill">HTML5/CSS</span>
+      </div>
+    </div>
+    <div class="skill-group fade-in">
+      <h3>👁️ Vision & Automatisation</h3>
+      <div class="skill-list">
+        <span class="skill-pill">OpenCV</span>
+        <span class="skill-pill">Computer Vision</span>
+        <span class="skill-pill">Traitement d'image</span>
+        <span class="skill-pill">GitLab CI/CD</span>
+        <span class="skill-pill">Docker</span>
+        <span class="skill-pill">Tests unitaires</span>
+        <span class="skill-pill">Virtualisation</span>
+        <span class="skill-pill">Automatisme</span>
+      </div>
+    </div>
     <div class="skill-group fade-in">
       <h3>🛡️ Cybersécurité</h3>
-
       <div class="skill-list">
         <span class="skill-pill">Pentesting</span>
         <span class="skill-pill">CTF</span>
         <span class="skill-pill">OWASP</span>
         <span class="skill-pill">Cryptographie</span>
         <span class="skill-pill">Analyse de vulnérabilités</span>
+        <span class="skill-pill">AppSec</span>
+        <span class="skill-pill">JWT / Auth</span>
       </div>
     </div>
-
-    <div class="skill-group fade-in">
-      <h3>💻 Développement</h3>
-
-      <div class="skill-list">
-        <span class="skill-pill">Python</span>
-        <span class="skill-pill">C</span>
-        <span class="skill-pill">Java</span>
-        <span class="skill-pill">PHP</span>
-        <span class="skill-pill">JavaScript</span>
-      </div>
-    </div>
-
     <div class="skill-group fade-in">
       <h3>🐧 Systèmes & Réseaux</h3>
-
       <div class="skill-list">
         <span class="skill-pill">Linux</span>
         <span class="skill-pill">TCP/IP</span>
         <span class="skill-pill">Apache</span>
         <span class="skill-pill">Client/Serveur</span>
+        <span class="skill-pill">REST API</span>
+        <span class="skill-pill">Microservices</span>
       </div>
     </div>
-
     <div class="skill-group fade-in">
-      <h3>🗄️ Outils</h3>
-
+      <h3>🗄️ Données & Outils</h3>
       <div class="skill-list">
+        <span class="skill-pill">SQL / MySQL</span>
+        <span class="skill-pill">MariaDB</span>
+        <span class="skill-pill">Power BI</span>
         <span class="skill-pill">Git</span>
-        <span class="skill-pill">SQL</span>
-        <span class="skill-pill">Trello</span>
-        <span class="skill-pill">UML</span>
+        <span class="skill-pill">Visual Studio</span>
+        <span class="skill-pill">Android Studio</span>
+        <span class="skill-pill">Xcode</span>
+        <span class="skill-pill">Unity</span>
+        <span class="skill-pill">Figma</span>
       </div>
     </div>
-
+    <div class="skill-group fade-in">
+      <h3>📐 Méthodes</h3>
+      <div class="skill-list">
+        <span class="skill-pill">Agile / Scrum</span>
+        <span class="skill-pill">UML</span>
+        <span class="skill-pill">Architecture MVC</span>
+        <span class="skill-pill">RBAC</span>
+        <span class="skill-pill">UI/UX</span>
+        <span class="skill-pill">Cahier des charges</span>
+        <span class="skill-pill">Documentation</span>
+      </div>
+    </div>
   </div>
-
 </section>
 
-<!-- PROJECTS -->
-
+<!-- PROJECTS PHARES -->
 <section id="projects">
-
-  <div class="section-label">// Projets</div>
-
+  <div class="section-label">// Projets phares</div>
   <h2>Réalisations <span>principales</span></h2>
-
   <div class="divider"></div>
+
+  <!-- HIGHLIGHT : vision industrielle -->
+  <div class="highlight-card fade-in">
+    <div class="featured-label">⭐ PROJET CLÉ · VISION INDUSTRIELLE</div>
+    <h3>👁️ Système de reconnaissance de plaques d'immatriculation</h3>
+    <p>Développement complet d'un système de détection et d'extraction automatique de plaques d'immatriculation. Traitement d'image en temps réel, extraction du texte, chiffrement et stockage sécurisé des données en base. Protection des données personnelles conforme RGPD.</p>
+    <div class="project-tags">
+      <span class="project-tag blue">Python</span>
+      <span class="project-tag blue">OpenCV</span>
+      <span class="project-tag blue">Computer Vision</span>
+      <span class="project-tag blue">Traitement d'image</span>
+      <span class="project-tag">MySQL</span>
+      <span class="project-tag">Cryptographie</span>
+      <span class="project-tag">RGPD</span>
+    </div>
+  </div>
 
   <div class="projects-grid">
 
-    <div class="project-card fade-in">
-
-      <div class="project-icon">🚗</div>
-
-      <h3>Système de reconnaissance de plaques</h3>
-
-      <p>
-        Développement d’un système de détection et d’extraction
-        de plaques d’immatriculation avec sécurisation
-        des données sensibles et protection des informations personnelles.
-      </p>
-
-      <div class="project-tags">
-        <span class="project-tag">Python</span>
-        <span class="project-tag">Computer Vision</span>
-        <span class="project-tag">Cryptographie</span>
-        <span class="project-tag">RGPD</span>
-      </div>
-
-    </div>
-
-    <div class="project-card fade-in">
-
+    <div class="project-card featured fade-in">
+      <div class="featured-label">⭐ PROJET CLÉ · FULL STACK</div>
       <div class="project-icon">🌱</div>
-
       <h3>Plateforme « Jardin de Cocagne »</h3>
-
-      <p>
-        Développement d’une plateforme de gestion avec tableaux de bord,
-        gestion des utilisateurs, commandes et contrôle d’accès sécurisé.
-      </p>
-
+      <p>Application web & mobile complète : interface client (panier, paiement, commande), interface admin (livraisons, itinéraires, suivi), tableaux de bord analytiques. Application Android native pour les clients avec suivi de commande et itinéraires en temps réel.</p>
       <div class="project-tags">
-        <span class="project-tag">PHP</span>
-        <span class="project-tag">Angular</span>
+        <span class="project-tag blue">PHP</span>
+        <span class="project-tag blue">Angular</span>
+        <span class="project-tag blue">Node.js</span>
+        <span class="project-tag blue">Android Studio</span>
         <span class="project-tag">MariaDB</span>
         <span class="project-tag">RBAC</span>
+        <span class="project-tag green">Paiement sécurisé</span>
       </div>
-
     </div>
 
-    <div class="project-card fade-in">
-
-      <div class="project-icon">🏢</div>
-
-      <h3>Plateforme de gestion de logements</h3>
-
-      <p>
-        Développement d’une plateforme web de gestion
-        de logements administratifs durant un stage,
-        avec gestion des données et développement back-end sécurisé.
-      </p>
-
-      <div class="project-tags">
-        <span class="project-tag">PHP</span>
-        <span class="project-tag">MySQL</span>
-        <span class="project-tag">Architecture MVC</span>
-        <span class="project-tag">Back-End</span>
-      </div>
-
-    </div>
-
-    <div class="project-card fade-in">
-
-      <div class="project-icon">📊</div>
-
-      <h3>Tableaux de bord analytiques</h3>
-
-      <p>
-        Création de dashboards interactifs et analyse de données
-        sur plusieurs jeux de données (Netflix, immobilier)
-        avec visualisation et reporting analytique.
-      </p>
-
-      <div class="project-tags">
-        <span class="project-tag">Power BI</span>
-        <span class="project-tag">Data Analysis</span>
-        <span class="project-tag">SQL</span>
-        <span class="project-tag">Reporting</span>
-      </div>
-
-    </div>
-
-    <div class="project-card fade-in">
-
-      <div class="project-icon">⚙️</div>
-
-      <h3>Automatisation & Tests unitaires</h3>
-
-      <p>
-        Mise en place de scripts d’automatisation,
-        validation fonctionnelle et tests unitaires
-        afin d’améliorer la fiabilité des applications.
-      </p>
-
-      <div class="project-tags">
-        <span class="project-tag">Testing</span>
-        <span class="project-tag">Automation</span>
-        <span class="project-tag">Quality Assurance</span>
-      </div>
-
-    </div>
-
-    <div class="project-card fade-in">
-
+    <div class="project-card featured fade-in">
+      <div class="featured-label">⭐ PROJET CLÉ · BACK-END SÉCURISÉ</div>
       <div class="project-icon">🔐</div>
-
       <h3>Microservice REST sécurisé</h3>
-
-      <p>
-        Développement d’un microservice avec authentification,
-        validation des entrées et contrôle d’accès sécurisé
-        pour une plateforme multi-utilisateurs.
-      </p>
-
+      <p>Développement d'un microservice en production pour EtudiantProConnect (500+ utilisateurs actifs). Authentification JWT, validation des entrées, contrôle d'accès rôles, gestion des publications et persistance sécurisée des données. Tests unitaires et d'intégration.</p>
       <div class="project-tags">
-        <span class="project-tag">REST API</span>
-        <span class="project-tag">JWT</span>
+        <span class="project-tag blue">REST API</span>
+        <span class="project-tag blue">JWT</span>
+        <span class="project-tag blue">Node.js</span>
+        <span class="project-tag green">Production</span>
         <span class="project-tag">AppSec</span>
         <span class="project-tag">Tests</span>
       </div>
+    </div>
 
+    <div class="project-card fade-in">
+      <div class="project-icon">🏢</div>
+      <h3>Plateforme de gestion de logements — Ministère de l'Éducation nationale</h3>
+      <p>Développement complet d'une plateforme web de gestion de logements administratifs en stage. Architecture MVC, back-end PHP, base de données MySQL, tests de sécurité applicative et validation fonctionnelle en conditions réelles.</p>
+      <div class="project-tags">
+        <span class="project-tag blue">PHP</span>
+        <span class="project-tag blue">MySQL</span>
+        <span class="project-tag blue">Node.js</span>
+        <span class="project-tag">Architecture MVC</span>
+        <span class="project-tag green">Tests sécu</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-icon">🍹</div>
+      <h3>Application iOS — Bar à cocktails</h3>
+      <p>Application mobile iOS native pour la commande de cocktails : catalogue avec barre de recherche, filtres alcool/sans alcool, interface intuitive. Développée sous Xcode avec Swift.</p>
+      <div class="project-tags">
+        <span class="project-tag blue">Swift</span>
+        <span class="project-tag blue">Xcode</span>
+        <span class="project-tag">iOS</span>
+        <span class="project-tag">UI/UX</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-icon">⚙️</div>
+      <h3>Pipeline CI/CD — Automatisation GitLab</h3>
+      <p>Mise en place d'une intégration continue complète sous GitLab CI : tests unitaires automatisés, vérification qualité du code, artefacts, déclenchement conditionnel par branche. Extension avec base de données MySQL via Docker.</p>
+      <div class="project-tags">
+        <span class="project-tag blue">GitLab CI/CD</span>
+        <span class="project-tag blue">Docker</span>
+        <span class="project-tag blue">PHP</span>
+        <span class="project-tag">Tests unitaires</span>
+        <span class="project-tag green">Automatisation</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-icon">📊</div>
+      <h3>Tableaux de bord analytiques</h3>
+      <p>Analyse de données sur des jeux de données réels (Netflix, immobilier) : nettoyage, structuration, création de visualisations interactives et dashboards analytiques avec reporting avancé.</p>
+      <div class="project-tags">
+        <span class="project-tag blue">Power BI</span>
+        <span class="project-tag blue">SQL</span>
+        <span class="project-tag">Data Analysis</span>
+        <span class="project-tag">Reporting</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-icon">✈️</div>
+      <h3>Site web agence de voyage</h3>
+      <p>Développement d'un site web dynamique avec interfaces utilisateur responsives, gestion de contenu et intégration de services.</p>
+      <div class="project-tags">
+        <span class="project-tag blue">PHP</span>
+        <span class="project-tag blue">HTML/CSS</span>
+        <span class="project-tag">Responsive</span>
+      </div>
     </div>
 
   </div>
-
 </section>
 
 <!-- AUTRES PROJETS -->
-
 <section id="other-projects">
-
   <div class="section-label">// Autres projets</div>
-
   <h2>Développement & <span>Programmation</span></h2>
-
   <div class="divider"></div>
-
   <div class="projects-grid">
-
     <div class="project-card fade-in">
-
       <div class="project-icon">🎮</div>
-
       <h3>Jeu de rôle avec PNJ</h3>
-
-      <p>
-        Développement d’un RPG en Java avec logique orientée objet,
-        gestion des personnages non-joueurs et interactions dynamiques.
-      </p>
-
-      <div class="project-tags">
-        <span class="project-tag">Java</span>
-        <span class="project-tag">POO</span>
-        <span class="project-tag">Game Logic</span>
-      </div>
-
+      <p>RPG en Java avec logique orientée objet, gestion des personnages non-joueurs et interactions dynamiques.</p>
+      <div class="project-tags"><span class="project-tag">Java</span><span class="project-tag">POO</span><span class="project-tag">Game Logic</span></div>
     </div>
-
     <div class="project-card fade-in">
-
       <div class="project-icon">👾</div>
-
       <h3>Pacman orienté objet</h3>
-
-      <p>
-        Conception d’un jeu Pacman en programmation orientée objet
-        avec gestion des collisions et architecture logicielle.
-      </p>
-
-      <div class="project-tags">
-        <span class="project-tag">Java</span>
-        <span class="project-tag">POO</span>
-        <span class="project-tag">Architecture</span>
-      </div>
-
+      <p>Jeu Pacman en Java POO avec gestion des collisions et architecture logicielle propre.</p>
+      <div class="project-tags"><span class="project-tag">Java</span><span class="project-tag">POO</span><span class="project-tag">Architecture</span></div>
     </div>
-
     <div class="project-card fade-in">
-
       <div class="project-icon">🕹️</div>
-
       <h3>Environnement de jeu Unity</h3>
-
-      <p>
-        Création d’un environnement interactif sous Unity
-        avec scripting et logique événementielle.
-      </p>
-
-      <div class="project-tags">
-        <span class="project-tag">Unity</span>
-        <span class="project-tag">C#</span>
-        <span class="project-tag">Game Engine</span>
-      </div>
-
+      <p>Création d'un environnement interactif sous Unity avec scripting C# et logique événementielle.</p>
+      <div class="project-tags"><span class="project-tag">Unity</span><span class="project-tag">C#</span><span class="project-tag">Game Engine</span></div>
     </div>
-
     <div class="project-card fade-in">
-
       <div class="project-icon">🖥️</div>
-
       <h3>Interfaces graphiques Java Swing</h3>
-
-      <p>
-        Conception d’interfaces graphiques desktop
-        avec Java Swing et gestion des événements utilisateurs.
-      </p>
-
-      <div class="project-tags">
-        <span class="project-tag">Java Swing</span>
-        <span class="project-tag">UI</span>
-        <span class="project-tag">Desktop App</span>
-      </div>
-
+      <p>Conception d'interfaces graphiques desktop avec Java Swing et gestion des événements.</p>
+      <div class="project-tags"><span class="project-tag">Java Swing</span><span class="project-tag">UI</span><span class="project-tag">Desktop</span></div>
     </div>
-
-    <div class="project-card fade-in">
-
-      <div class="project-icon">📱</div>
-
-      <h3>Applications mobiles & interfaces</h3>
-
-      <p>
-        Développement d’applications mobiles et interfaces utilisateur
-        avec Android Studio et Swift / Xcode.
-      </p>
-
-      <div class="project-tags">
-        <span class="project-tag">Android Studio</span>
-        <span class="project-tag">Swift</span>
-        <span class="project-tag">UI/UX</span>
-      </div>
-
-    </div>
-
-    <div class="project-card fade-in">
-
-      <div class="project-icon">✈️</div>
-
-      <h3>Site web agence de voyage</h3>
-
-      <p>
-        Développement d’un site web dynamique
-        avec interface utilisateur responsive
-        et gestion de contenu.
-      </p>
-
-      <div class="project-tags">
-        <span class="project-tag">PHP</span>
-        <span class="project-tag">HTML/CSS</span>
-        <span class="project-tag">Responsive</span>
-      </div>
-
-    </div>
-
   </div>
-
 </section>
 
 <!-- CTF -->
-
 <section id="ctf">
-
   <div class="section-label">// CTF & Cyber</div>
-
   <h2>Pratique <span>Cybersécurité</span></h2>
-
   <div class="divider"></div>
-
   <div class="projects-grid">
-
     <div class="project-card fade-in">
-
       <div class="project-icon">🏁</div>
-
       <h3>Capture The Flag</h3>
-
-      <p>
-        Participation régulière à des challenges
-        cybersécurité : web, forensic,
-        reverse engineering et cryptographie.
-      </p>
-
+      <p>Participation régulière à des challenges cybersécurité : web, forensic, reverse engineering et cryptographie.</p>
       <div class="project-tags">
         <span class="project-tag">Root-Me</span>
         <span class="project-tag">Hack The Box</span>
         <span class="project-tag">TryHackMe</span>
       </div>
-
     </div>
-
     <div class="project-card fade-in">
-
       <div class="project-icon">🛡️</div>
-
       <h3>Veille Sécurité</h3>
-
-      <p>
-        Suivi régulier des vulnérabilités,
-        bonnes pratiques de sécurité applicative,
-        OWASP Top 10 et actualités cyber.
-      </p>
-
+      <p>Suivi régulier des vulnérabilités, bonnes pratiques de sécurité applicative, OWASP Top 10 et actualités cyber.</p>
       <div class="project-tags">
         <span class="project-tag">OWASP</span>
         <span class="project-tag">CVE</span>
         <span class="project-tag">AppSec</span>
       </div>
-
     </div>
-
   </div>
-
 </section>
 
 <!-- EXPERIENCE -->
-
 <section id="experience">
-
   <div class="section-label">// Parcours</div>
-
   <h2>Expériences & <span>Formation</span></h2>
-
   <div class="divider"></div>
-
   <div class="timeline">
 
     <div class="timeline-item fade-in">
-
       <div class="tl-dot"></div>
-
       <div>
-
         <div class="tl-date">2026 → 2029</div>
-
-        <div class="tl-title">
-          Diplôme d'Ingénieure Informatique – Cybersécurité
-        </div>
-
-        <div class="tl-company">
-          CNAM Saint-Dié-des-Vosges
-        </div>
-
-        <div class="tl-desc">
-          Formation d'ingénieure en alternance
-          spécialisée cybersécurité.
-        </div>
-
+        <div class="tl-title">Diplôme d'Ingénieure Informatique – Cybersécurité</div>
+        <div class="tl-company">CNAM Saint-Dié-des-Vosges</div>
+        <div class="tl-desc">Formation d'ingénieure en alternance spécialisée cybersécurité.</div>
       </div>
-
     </div>
 
     <div class="timeline-item fade-in">
-
       <div class="tl-dot"></div>
-
       <div>
-
-        <div class="tl-date">Stage</div>
-
-        <div class="tl-title">
-          Stagiaire Développeur Back-End
-        </div>
-
-        <div class="tl-company">
-          EtudiantProConnect
-        </div>
-
-        <div class="tl-desc">
-          Développement d'un microservice REST sécurisé,
-          validation des entrées et contrôle d'accès.
-        </div>
-
+        <div class="tl-date">Mai 2026 – Août 2026</div>
+        <div class="tl-title">Stagiaire Ingénieure Back-End</div>
+        <div class="tl-company">EtudiantProConnect</div>
+        <div class="tl-desc">Développement d'un microservice REST sécurisé en production : authentification JWT, contrôle d'accès rôles, validation des entrées, tests unitaires et d'intégration. Plateforme active — 500+ utilisateurs.</div>
       </div>
-
     </div>
 
     <div class="timeline-item fade-in">
-
       <div class="tl-dot"></div>
-
       <div>
+        <div class="tl-date">Janvier 2025 – Avril 2025</div>
+        <div class="tl-title">Stagiaire Développeuse Web</div>
+        <div class="tl-company">Ministère de l'Éducation nationale</div>
+        <div class="tl-desc">Développement complet d'une plateforme de gestion de logements administratifs. Tests de sécurité applicative et validation fonctionnelle en conditions réelles.</div>
+      </div>
+    </div>
 
+    <div class="timeline-item fade-in">
+      <div class="tl-dot"></div>
+      <div>
         <div class="tl-date">2023 → 2026</div>
-
-        <div class="tl-title">
-          BUT Informatique
-        </div>
-
-        <div class="tl-company">
-          Université de Lorraine
-        </div>
-
-        <div class="tl-desc">
-          Formation développement logiciel,
-          systèmes, réseaux et cybersécurité.
-        </div>
-
+        <div class="tl-title">BUT Informatique — Parcours Réalisation d'Applications</div>
+        <div class="tl-company">Université de Lorraine</div>
+        <div class="tl-desc">Formation développement logiciel, systèmes, réseaux, cybersécurité et automatisation.</div>
       </div>
-
     </div>
 
   </div>
-
 </section>
 
 <!-- CONTACT -->
-
 <section id="contact">
-
   <div class="section-label">// Contact</div>
-
   <h2>Travaillons <span>ensemble</span></h2>
-
   <div class="divider" style="margin:0 auto 2rem;"></div>
-
   <div class="contact-card fade-in">
-
-    <p>
-      Je recherche une alternance en cybersécurité
-      à partir de septembre 2026.
-    </p>
-
+    <p>Je recherche une alternance en informatique / cybersécurité à partir de septembre 2026. Disponible pour un entretien en visio ou en présentiel.</p>
     <div class="contact-links">
-
-      <a
-        href="mailto:ayamerimi2016@gmail.com"
-        class="contact-link"
-      >
-        ✉️ ayamerimi2016@gmail.com
-      </a>
-      
-      <a
-        href="https://linkedin.com/in/ayat-merimi"
-        target="_blank"
-        class="contact-link"
-      >
-        💼 LinkedIn
-      </a>
-
-      <a
-        href="https://github.com/merimia"
-        target="_blank"
-        class="contact-link"
-      >
-        🐙 GitHub
-      </a>
-
+      <a href="mailto:ayamerimi2016@gmail.com" class="contact-link">✉️ ayamerimi2016@gmail.com</a>
+      <a href="https://linkedin.com/in/ayat-merimi" target="_blank" class="contact-link">💼 LinkedIn</a>
+      <a href="https://github.com/merimia" target="_blank" class="contact-link">🐙 GitHub</a>
     </div>
-
   </div>
-
 </section>
 
-<footer>
-  © 2026 Ayat Merimi · Portfolio Cybersécurité 🔐
-</footer>
-
-<!-- SCRIPT -->
+<footer>© 2026 Ayat Merimi · Portfolio Développement & Cybersécurité 🔐</footer>
 
 <script>
-
   const observer = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-      }
-
-    });
-
-  }, {
-    threshold:0.15
-  });
-
-  document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
-  });
-
+    entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); } });
+  }, { threshold:0.15 });
+  document.querySelectorAll('.fade-in').forEach(el => { observer.observe(el); });
 </script>
-
 </body>
 </html>
