@@ -1,0 +1,138 @@
+<svg viewBox="0 0 820 460" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+  <rect width="820" height="460" fill="#0f172a" rx="10"/>
+  <rect width="820" height="34" fill="#1e293b" rx="10"/>
+  <rect y="20" width="820" height="14" fill="#1e293b"/>
+  <circle cx="18" cy="17" r="6" fill="#f38ba8"/>
+  <circle cx="38" cy="17" r="6" fill="#f9e2af"/>
+  <circle cx="58" cy="17" r="6" fill="#a6e3a1"/>
+  <text x="410" y="22" text-anchor="middle" font-size="12" fill="#94a3b8">detect_plate.py — OpenCV + Tesseract OCR — MERIMI Ayat &amp; MEHIAOUI Mohamed</text>
+
+  <!-- Pipeline header -->
+  <text x="410" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#60a5fa">Pipeline de traitement — Reconnaissance de Plaques d'Immatriculation</text>
+
+  <!-- Pipeline steps -->
+  <defs>
+    <marker id="parr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <!-- Step boxes -->
+  <!-- 1: Input -->
+  <rect x="14" y="74" width="110" height="56" fill="#1e3a5f" stroke="#2563EB" stroke-width="1.5" rx="6"/>
+  <text x="69" y="94" text-anchor="middle" font-size="10" font-weight="bold" fill="#60a5fa">1. Input</text>
+  <text x="69" y="110" text-anchor="middle" font-size="8.5" fill="#94a3b8">Flux video /</text>
+  <text x="69" y="122" text-anchor="middle" font-size="8.5" fill="#94a3b8">image statique</text>
+  <line x1="124" y1="102" x2="140" y2="102" stroke="#475569" stroke-width="1.5" marker-end="url(#parr)"/>
+
+  <!-- 2: Preprocess -->
+  <rect x="140" y="74" width="120" height="56" fill="#1e3a5f" stroke="#2563EB" stroke-width="1.5" rx="6"/>
+  <text x="200" y="94" text-anchor="middle" font-size="10" font-weight="bold" fill="#60a5fa">2. Preprocessing</text>
+  <text x="200" y="110" text-anchor="middle" font-size="8.5" fill="#94a3b8">Grayscale, CLAHE</text>
+  <text x="200" y="122" text-anchor="middle" font-size="8.5" fill="#94a3b8">Bilateral filter</text>
+  <line x1="260" y1="102" x2="276" y2="102" stroke="#475569" stroke-width="1.5" marker-end="url(#parr)"/>
+
+  <!-- 3: Detection -->
+  <rect x="276" y="74" width="120" height="56" fill="#1e3a5f" stroke="#2563EB" stroke-width="1.5" rx="6"/>
+  <text x="336" y="94" text-anchor="middle" font-size="10" font-weight="bold" fill="#60a5fa">3. Detection</text>
+  <text x="336" y="110" text-anchor="middle" font-size="8.5" fill="#94a3b8">Canny edges</text>
+  <text x="336" y="122" text-anchor="middle" font-size="8.5" fill="#94a3b8">Contours + filtres</text>
+  <line x1="396" y1="102" x2="412" y2="102" stroke="#475569" stroke-width="1.5" marker-end="url(#parr)"/>
+
+  <!-- 4: Segmentation -->
+  <rect x="412" y="74" width="120" height="56" fill="#1e3a5f" stroke="#2563EB" stroke-width="1.5" rx="6"/>
+  <text x="472" y="94" text-anchor="middle" font-size="10" font-weight="bold" fill="#60a5fa">4. Segmentation</text>
+  <text x="472" y="110" text-anchor="middle" font-size="8.5" fill="#94a3b8">Extraction ROI</text>
+  <text x="472" y="122" text-anchor="middle" font-size="8.5" fill="#94a3b8">Seuillage adapt.</text>
+  <line x1="532" y1="102" x2="548" y2="102" stroke="#475569" stroke-width="1.5" marker-end="url(#parr)"/>
+
+  <!-- 5: OCR -->
+  <rect x="548" y="74" width="120" height="56" fill="#1e3a5f" stroke="#2563EB" stroke-width="1.5" rx="6"/>
+  <text x="608" y="94" text-anchor="middle" font-size="10" font-weight="bold" fill="#60a5fa">5. OCR</text>
+  <text x="608" y="110" text-anchor="middle" font-size="8.5" fill="#94a3b8">Tesseract + regex</text>
+  <text x="608" y="122" text-anchor="middle" font-size="8.5" fill="#94a3b8">Post-traitement</text>
+  <line x1="668" y1="102" x2="684" y2="102" stroke="#475569" stroke-width="1.5" marker-end="url(#parr)"/>
+
+  <!-- 6: Output -->
+  <rect x="684" y="74" width="122" height="56" fill="#1a3a2a" stroke="#16a34a" stroke-width="1.5" rx="6"/>
+  <text x="745" y="94" text-anchor="middle" font-size="10" font-weight="bold" fill="#4ade80">6. Resultat</text>
+  <text x="745" y="110" text-anchor="middle" font-size="8.5" fill="#86efac">Plaque detectee</text>
+  <text x="745" y="122" text-anchor="middle" font-size="8.5" fill="#86efac">Chiffrement + BDD</text>
+
+  <!-- Code section -->
+  <rect x="14" y="146" width="470" height="284" fill="#0d1117" rx="8" stroke="#1e293b" stroke-width="1"/>
+  <text x="30" y="164" font-size="9" font-family="Courier New,monospace" fill="#6c7086"># detect_plate.py — MERIMI Ayat &amp; MEHIAOUI Mohamed</text>
+  <text x="30" y="180" font-size="9" font-family="Courier New,monospace" fill="#89b4fa">import</text>
+  <text x="64" y="180" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4"> cv2, pytesseract, re, mysql.connector</text>
+  <text x="30" y="196" font-size="9" font-family="Courier New,monospace" fill="#89b4fa">from</text>
+  <text x="57" y="196" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4"> cryptography.fernet </text>
+  <text x="172" y="196" font-size="9" font-family="Courier New,monospace" fill="#89b4fa">import</text>
+  <text x="207" y="196" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4"> Fernet</text>
+
+  <text x="30" y="216" font-size="9" font-family="Courier New,monospace" fill="#89b4fa">def</text>
+  <text x="48" y="216" font-size="9" font-family="Courier New,monospace" fill="#a6e3a1"> detecter_plaque</text>
+  <text x="146" y="216" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">(frame):</text>
+  <text x="30" y="232" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">    gray = cv2.</text>
+  <text x="96" y="232" font-size="9" font-family="Courier New,monospace" fill="#a6e3a1">cvtColor</text>
+  <text x="140" y="232" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">(frame, cv2.COLOR_BGR2GRAY)</text>
+  <text x="30" y="248" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">    clahe = cv2.</text>
+  <text x="96" y="248" font-size="9" font-family="Courier New,monospace" fill="#a6e3a1">createCLAHE</text>
+  <text x="154" y="248" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">(clipLimit=2.0, tileGridSize=(8,8))</text>
+  <text x="30" y="264" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">    enhanced = clahe.</text>
+  <text x="131" y="264" font-size="9" font-family="Courier New,monospace" fill="#a6e3a1">apply</text>
+  <text x="158" y="264" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">(gray)</text>
+  <text x="30" y="280" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">    edges = cv2.</text>
+  <text x="96" y="280" font-size="9" font-family="Courier New,monospace" fill="#a6e3a1">Canny</text>
+  <text x="126" y="280" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">(enhanced, </text>
+  <text x="193" y="280" font-size="9" font-family="Courier New,monospace" fill="#f9e2af">50</text>
+  <text x="207" y="280" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">, </text>
+  <text x="215" y="280" font-size="9" font-family="Courier New,monospace" fill="#f9e2af">200</text>
+  <text x="229" y="280" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">)</text>
+  <text x="30" y="296" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">    contours, _ = cv2.</text>
+  <text x="137" y="296" font-size="9" font-family="Courier New,monospace" fill="#a6e3a1">findContours</text>
+  <text x="200" y="296" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">(edges, ...)</text>
+  <text x="30" y="312" font-size="9" font-family="Courier New,monospace" fill="#6c7086">    # Filtrage ratio largeur/hauteur plaque</text>
+  <text x="30" y="328" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">    plaque_roi = </text>
+  <text x="100" y="328" font-size="9" font-family="Courier New,monospace" fill="#a6e3a1">filtrer_contours</text>
+  <text x="186" y="328" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">(contours, ratio=(2.5,5))</text>
+  <text x="30" y="344" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">    texte = pytesseract.</text>
+  <text x="137" y="344" font-size="9" font-family="Courier New,monospace" fill="#a6e3a1">image_to_string</text>
+  <text x="223" y="344" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">(plaque_roi)</text>
+  <text x="30" y="360" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">    plaque = re.</text>
+  <text x="92" y="360" font-size="9" font-family="Courier New,monospace" fill="#a6e3a1">sub</text>
+  <text x="110" y="360" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">(r'[^A-Z0-9-]', '', texte.</text>
+  <text x="244" y="360" font-size="9" font-family="Courier New,monospace" fill="#a6e3a1">upper</text>
+  <text x="275" y="360" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">())</text>
+  <text x="30" y="376" font-size="9" font-family="Courier New,monospace" fill="#6c7086">    # Chiffrement RGPD avant stockage BDD</text>
+  <text x="30" y="392" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">    plaque_chiff = fernet.</text>
+  <text x="152" y="392" font-size="9" font-family="Courier New,monospace" fill="#a6e3a1">encrypt</text>
+  <text x="193" y="392" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">(plaque.</text>
+  <text x="236" y="392" font-size="9" font-family="Courier New,monospace" fill="#a6e3a1">encode</text>
+  <text x="272" y="392" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4">())</text>
+  <text x="30" y="408" font-size="9" font-family="Courier New,monospace" fill="#89b4fa">    return</text>
+  <text x="72" y="408" font-size="9" font-family="Courier New,monospace" fill="#cdd6f4"> plaque, plaque_chiff</text>
+
+  <!-- Output panel -->
+  <rect x="500" y="146" width="306" height="284" fill="#0d1117" rx="8" stroke="#1e293b" stroke-width="1"/>
+  <text x="516" y="166" font-size="9" font-family="Courier New,monospace" fill="#6c7086">$ python detect_plate.py --source video.mp4</text>
+  <text x="516" y="182" font-size="9" font-family="Courier New,monospace" fill="#475569">Initialisation OpenCV 4.8 · Tesseract 5.3</text>
+  <text x="516" y="198" font-size="9" font-family="Courier New,monospace" fill="#475569">Camera: 640x480 · FPS: 24</text>
+
+  <text x="516" y="218" font-size="9" font-family="Courier New,monospace" fill="#4ade80">Frame #142 — plaque detectee :</text>
+  <rect x="514" y="224" width="278" height="38" fill="#1a3a2a" rx="4"/>
+  <text x="524" y="239" font-size="11" font-family="Courier New,monospace" fill="#4ade80">Plaque : AB-123-CD</text>
+  <text x="524" y="254" font-size="9" font-family="Courier New,monospace" fill="#86efac">Confiance OCR : 94.2%</text>
+
+  <text x="516" y="274" font-size="9" font-family="Courier New,monospace" fill="#4ade80">Frame #187 — plaque detectee :</text>
+  <rect x="514" y="280" width="278" height="38" fill="#1a3a2a" rx="4"/>
+  <text x="524" y="295" font-size="11" font-family="Courier New,monospace" fill="#4ade80">Plaque : EF-456-GH</text>
+  <text x="524" y="310" font-size="9" font-family="Courier New,monospace" fill="#86efac">Confiance OCR : 91.8%</text>
+
+  <text x="516" y="330" font-size="9" font-family="Courier New,monospace" fill="#f9e2af">Chiffrement Fernet (RGPD) ... OK</text>
+  <text x="516" y="346" font-size="9" font-family="Courier New,monospace" fill="#f9e2af">INSERT INTO plaques (hash, ts) ... OK</text>
+
+  <rect x="514" y="358" width="278" height="56" fill="#1e293b" rx="4"/>
+  <text x="524" y="374" font-size="9" font-family="Courier New,monospace" fill="#94a3b8">Precision detection : 88.3%</text>
+  <text x="524" y="388" font-size="9" font-family="Courier New,monospace" fill="#94a3b8">Temps traitement moyen : 42ms/frame</text>
+  <text x="524" y="402" font-size="9" font-family="Courier New,monospace" fill="#94a3b8">IoU moyen : 0.79 · mAP@0.5 : 0.83</text>
+</svg>
