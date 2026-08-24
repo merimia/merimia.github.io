@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light" data-pillar="design">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design &amp; UX — Ayat Merimi</title>
+<meta name="description" content="Interfaces mobiles, desktop et web. Maquettage Figma, ergonomie, accessibilité. Applications iOS, Angular, Java Swing et Unity.">
+<link rel="canonical" href="https://merimia.github.io/design.html">
+<meta property="og:title" content="Design & UX — Ayat Merimi">
+<meta property="og:description" content="Le chemin le plus simple doit être le plus sûr.">
+<meta property="og:image" content="https://merimia.github.io/assets/img/og.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23faf9f7'/><text y='72' x='50' text-anchor='middle' font-size='58' font-family='monospace' fill='%23ff5fa2'>&#8250;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/fx.css">
+<link rel="stylesheet" href="assets/css/robot.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></symbol>
+<symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.1 0-1 .8-1.7 1.7-1.7H16A5 5 0 0 0 21 11c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="11" r="1.1"/><circle cx="12" cy="7.5" r="1.1"/><circle cx="16.5" cy="11" r="1.1"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></symbol>
+<symbol id="i-desktop" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol>
+<symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 2.8 20.5 7v10L12 21.2 3.5 17V7z"/><path d="M3.5 7 12 11.4 20.5 7M12 11.4v9.8"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.8"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.6 20 5.5v6c0 5-3.4 8.3-8 9.9-4.6-1.6-8-4.9-8-9.9v-6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10" width="15" height="10.5" rx="2.5"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10"/></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15.5" r="4.2"/><path d="m11.2 12.6 8.3-8.3M16.5 7.3l2.4 2.4M14.2 9.6l2.4 2.4"/></symbol>
+<symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5.8" rx="7.8" ry="3.2"/><path d="M4.2 5.8v12.4c0 1.8 3.5 3.2 7.8 3.2s7.8-1.4 7.8-3.2V5.8"/><path d="M4.2 12c0 1.8 3.5 3.2 7.8 3.2s7.8-1.4 7.8-3.2"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 20.5h17"/><rect x="5.5" y="11" width="3.4" height="6.5" rx="1"/><rect x="10.3" y="6.5" width="3.4" height="11" rx="1"/><rect x="15.1" y="13.5" width="3.4" height="4" rx="1"/></symbol>
+<symbol id="i-bug" viewBox="0 0 24 24"><rect x="7" y="7.5" width="10" height="12" rx="5"/><path d="M9 6.2A3 3 0 0 1 15 6.2M7 12H3.2M20.8 12H17M7.6 8 4.8 5.6M16.4 8l2.8-2.4M7.6 17.6l-2.8 2.6M16.4 17.6l2.8 2.6"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4.5l-3 15"/></symbol>
+<symbol id="i-braces" viewBox="0 0 24 24"><path d="M8.5 3.5c-2 0-2.5 1-2.5 3v2c0 2-1 3-2.5 3 1.5 0 2.5 1 2.5 3v2c0 2 .5 3 2.5 3M15.5 3.5c2 0 2.5 1 2.5 3v2c0 2 1 3 2.5 3-1.5 0-2.5 1-2.5 3v2c0 2-.5 3-2.5 3"/></symbol>
+<symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="3.5" width="18" height="7" rx="2"/><rect x="3" y="13.5" width="18" height="7" rx="2"/><path d="M7 7h.01M7 17h.01"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9 4.6-9 4.6-9-4.6z"/><path d="m3 12.5 9 4.6 9-4.6M3 17.2l9 4.6 9-4.6"/></symbol>
+<symbol id="i-flask" viewBox="0 0 24 24"><path d="M9.5 2.8v6.4L4.2 18.4c-.9 1.5.2 3.3 2 3.3h11.6c1.8 0 2.9-1.8 2-3.3L14.5 9.2V2.8"/><path d="M8.5 2.8h7M6.6 14.5h10.8"/></symbol>
+<symbol id="i-network" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="2.4"/><circle cx="4.8" cy="19.5" r="2.4"/><circle cx="19.2" cy="19.5" r="2.4"/><path d="M12 6.9v4.6M12 11.5 6.3 17.6M12 11.5l5.7 6.1"/></symbol>
+<symbol id="i-route" viewBox="0 0 24 24"><circle cx="5.5" cy="5.5" r="2.6"/><circle cx="18.5" cy="18.5" r="2.6"/><path d="M8.1 5.5h5.4a4 4 0 0 1 0 8h-3a4 4 0 0 0 0 8h5.4"/></symbol>
+<symbol id="i-wall" viewBox="0 0 24 24"><rect x="2.8" y="4" width="18.4" height="16" rx="2"/><path d="M2.8 9.3h18.4M2.8 14.7h18.4M8.5 4v5.3M15.5 4v5.3M6 9.3v5.4M12 9.3v5.4M18 9.3v5.4M9 14.7V20M15.5 14.7V20"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.8"/><path d="m15.5 15.5 5 5"/></symbol>
+<symbol id="i-terminal" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="2.5"/><path d="m7 10 2.6 2.4L7 14.8M12.8 15h4"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24"><rect x="3" y="3.5" width="18" height="17" rx="2.5"/><path d="M3 9h18M8 3.5V9M13 3.5V9"/></symbol>
+<symbol id="i-plane" viewBox="0 0 24 24"><path d="M10.5 19.5 12 21l1.5-1.5-.6-4.4 6.4 1.9c.7.2 1.4-.4 1.2-1.1l-.5-1.7a1.6 1.6 0 0 0-.8-1L13 9.6V5a2 2 0 0 0-2-2 2 2 0 0 0-2 2v4.6l-6.2 3.6c-.4.2-.7.6-.8 1l-.5 1.7c-.2.7.5 1.3 1.2 1.1l6.4-1.9z"/></symbol>
+<symbol id="i-leaf" viewBox="0 0 24 24"><path d="M4 20.5c0-8 5-14 16-15.5C21 14 16 20.5 8 20.5z"/><path d="M4 20.5C8 15 12 12 18 9.5"/></symbol>
+<symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="2.8" width="16" height="18.4" rx="2"/><path d="M8.5 7h2M13.5 7h2M8.5 11.5h2M13.5 11.5h2M10 21.2v-4.4h4v4.4"/></symbol>
+<symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21.5V3.2M5 4.2c4.5-2 9.5 2 14 0v9.6c-4.5 2-9.5-2-14 0"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.01M4.5 12h.01M4.5 17.5h.01"/></symbol>
+<symbol id="i-swatch" viewBox="0 0 24 24"><path d="M4.5 3.5h6v13a3 3 0 0 1-6 0z"/><path d="M10.5 10.2 15 5.7l4.2 4.2-8.7 8.7M8.5 16.5h.01M12.5 20.5h7"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></symbol>
+</defs></svg>
+
+<div id="progress"></div>
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">ayat<span>.</span>merimi</a>
+    <nav class="nav-links" id="nav-links" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="design.html" class="active" aria-current="page">Design</a>
+      <a href="ia-cyber.html">IA&nbsp;&amp;&nbsp;Cyber</a>
+      <a href="backend.html">Backend</a>
+      <a href="reseaux.html">Réseaux</a>
+      <a href="labs.html">Labs</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="icon-btn" id="theme-btn" aria-label="Changer de thème">◑</button>
+    <button class="icon-btn burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" style="padding-bottom:60px">
+  <div class="wrap">
+    <p class="eyebrow rv in">Pilier 01</p>
+    <h1 class="rv in" style="max-width:11ch">Design<br>&amp; UX</h1>
+    <p class="lede rv in rv-d1" style="margin-top:24px">
+      Le chemin le plus simple doit être le plus sûr.
+    </p>
+    <details class="more rv in rv-d2">
+      <summary><span class="pl"></span> Pourquoi</summary>
+      <div class="more-body">
+        <p style="max-width:58ch;margin-bottom:0">
+          L'utilisateur qui contourne une contrainte mal pensée devient la première faille du système.
+          Il note son mot de passe, clique sur « ignorer », désactive la double authentification.
+          La plupart des incidents commencent par une friction d'ergonomie, pas par une prouesse technique.
+        </p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow rv">Conception</p>
+    <h2 class="rv" style="margin-bottom:12px">Maquettes</h2>
+    <p class="lede rv rv-d1" style="margin-bottom:36px">
+      Je dessine avant de coder. Sinon je code deux fois.
+    </p>
+
+    <figure class="fig board rv">
+      <a href="assets/img/figma-skincare.jpg" target="_blank" rel="noopener">
+        <img src="assets/img/figma-skincare.jpg" srcset="assets/img/figma-skincare@0.5.jpg 800w, assets/img/figma-skincare.jpg 1600w" sizes="(max-width:900px) 100vw, 1100px" alt="Maquette Figma d'une application de routines de soin : compte, catalogue de routines, fiche produit, détail et scan de code-barres" loading="lazy">
+      </a>
+      <figcaption><b>Application de routines de soin</b> — parcours complet sur cinq écrans, du compte au scan de code-barres, avec analyse photo de la peau.</figcaption>
+    </figure>
+
+    <details class="more rv" style="margin-bottom:44px">
+      <summary><span class="pl"></span> Les choix de conception</summary>
+      <div class="more-body">
+        <div class="detail-grid">
+          <div><h4>Un système, pas des écrans</h4><p>Une seule palette, une seule échelle typographique, la même barre de navigation à quatre entrées partout. Chaque écran est une variation, jamais une exception.</p></div>
+          <div><h4>Le type de peau d'abord</h4><p>Toute l'application découle d'une seule donnée. Elle se demande dès le compte, et filtre ensuite tout le catalogue — l'utilisateur ne voit jamais de produit qui ne le concerne pas.</p></div>
+          <div><h4>Deux entrées vers la même chose</h4><p>Scanner un code-barres ou photographier sa peau mènent au même conseil. Deux gestes très différents, un seul résultat : c'est là que l'ergonomie se joue.</p></div>
+          <div><h4>Les états sont dessinés</h4><p>« Ajoutée au panier » et « Ajouter au panier » cohabitent dans la maquette. Ce sont deux états du même bouton, définis avant le développement.</p></div>
+        </div>
+      </div>
+    </details>
+
+    <figure class="fig board rv">
+      <a href="assets/img/figma-defiez-moi.jpg" target="_blank" rel="noopener">
+        <img src="assets/img/figma-defiez-moi.jpg" srcset="assets/img/figma-defiez-moi@0.5.jpg 762w, assets/img/figma-defiez-moi.jpg 1525w" sizes="(max-width:900px) 100vw, 1100px" alt="Maquette Figma de Défiez-moi : connexion, inscription, dépôt d'image, historique des prédictions et statistiques, en versions bureau et mobile" loading="lazy">
+      </a>
+      <figcaption><b>Défiez-moi</b> — interface d'un système de reconnaissance d'images par IA. Maquettée en version bureau <em>et</em> smartphone dès la conception.</figcaption>
+    </figure>
+
+    <details class="more rv">
+      <summary><span class="pl"></span> Concevoir pour une IA qui se trompe</summary>
+      <div class="more-body">
+        <div class="detail-grid">
+          <div><h4>Le vrai sujet</h4><p>Un modèle de reconnaissance a toujours tort une partie du temps. Le défi n'était pas d'afficher une prédiction, mais de rendre l'erreur acceptable pour l'utilisateur.</p></div>
+          <div><h4>Trois réponses, pas deux</h4><p>Le retour utilisateur propose « bravo », « non, c'est l'autre » et <em>« ni l'un ni l'autre »</em>. Ce troisième choix est le plus important : sans lui, on force l'utilisateur à mentir, et on pollue les données de réentraînement.</p></div>
+          <div><h4>L'historique comme preuve</h4><p>Chaque prédiction est conservée avec sa date, son retour et ses images téléchargeables. L'utilisateur peut vérifier le système, pas seulement le subir.</p></div>
+          <div><h4>Le mobile dès le départ</h4><p>Les versions smartphone ont été maquettées en même temps que le bureau, pas adaptées après coup. On photographie avec son téléphone — c'était l'usage principal, il ne pouvait pas être secondaire.</p></div>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow rv">Réalisations</p>
+    <h2 class="rv" style="margin-bottom:36px">Interfaces</h2>
+
+    <div class="row rv" data-filter-bar style="margin-bottom:56px" role="group" aria-label="Filtrer">
+      <button class="chip accent" data-f="all" aria-pressed="true">Tout</button>
+      <button class="chip" data-f="mobile" aria-pressed="false">Mobile</button>
+      <button class="chip" data-f="web" aria-pressed="false">Web</button>
+      <button class="chip" data-f="desktop" aria-pressed="false">Desktop</button>
+      <button class="chip" data-f="game" aria-pressed="false">Jeu &amp; 3D</button>
+    </div>
+
+    <article class="show full rv" data-tags="mobile">
+      <div class="show-visual">
+        <figure class="fig board">
+          <a href="assets/img/maquette-cocktails.svg" target="_blank" rel="noopener">
+            <img src="assets/img/maquette-cocktails.svg" alt="Quatre écrans de l'application : catalogue, filtre sans alcool actif, fiche cocktail et recherche sans résultat" loading="lazy">
+          </a>
+          <figcaption><b>Reconstitution de l'interface</b> — le projet d'origine, développé en Swift,
+            était hébergé sur un poste de l'IUT auquel je n'ai plus accès. Ces écrans ont été
+            redessinés d'après la maquette et le code d'origine.</figcaption>
+        </figure>
+      </div>
+      <div class="show-body">
+        <div class="show-head">
+          <span class="show-n">01</span>
+          <h3>Bar à cocktails</h3>
+          <p class="card-meta">iOS natif · Swift</p>
+        </div>
+        <p>
+          Un client debout, dans le bruit, une seule main libre. Le catalogue est donc visuel,
+          le filtre permanent, la recherche instantanée.
+        </p>
+        <details class="more">
+          <summary><span class="pl"></span> Les décisions de conception</summary>
+          <div class="more-body">
+            <div class="detail-grid">
+              <div><h4>Ce que j'ai tranché</h4><ul>
+                <li>Catalogue visuel en premier écran</li>
+                <li>Filtre alcool / sans alcool toujours visible</li>
+                <li>Recherche sans validation</li>
+                <li>Cibles tactiles pensées pour le pouce</li>
+              </ul></div>
+              <div><h4>Ce que je referais</h4><p>Je n'avais pas dessiné les états vides. Je conçois désormais les quatre états — vide, chargement, erreur, succès — avant la première ligne de vue. Le quatrième écran est cette correction.</p></div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <article class="show rv" data-tags="game">
+      <div class="show-visual">
+        <figure class="fig">
+          <a href="assets/img/unity-scene.jpg" target="_blank" rel="noopener">
+            <div class="frame">
+              <div class="frame-bar"><i></i><i></i><i></i><em>Unity 6 — Scene &amp; Game</em></div>
+              <img src="assets/img/unity-scene.jpg" srcset="assets/img/unity-scene@0.5.jpg 454w, assets/img/unity-scene.jpg 908w" sizes="(max-width:880px) 100vw, 45vw" alt="Éditeur Unity 6 : vue Scene et vue Game d'un environnement 3D low poly avec montagnes, eau, arbres et un cheval animé" loading="lazy">
+            </div>
+          </a>
+          <figcaption>Vue Scene en haut, rendu final en bas. Capture d'écran réelle.</figcaption>
+        </figure>
+      </div>
+      <div class="show-body">
+        <div class="show-head">
+          <span class="show-n">02</span>
+          <h3>Environnement Unity</h3>
+          <p class="card-meta">Scène 3D · Unity 6 · C#</p>
+        </div>
+        <p>
+          Vallée en <em>low poly</em> : relief sculpté, plan d'eau, roches et végétation instanciée,
+          éclairage de coucher de soleil réglé par volume global. Un cheval animé parcourt la berge.
+        </p>
+      </div>
+    </article>
+
+    <article class="show rev rv" data-tags="web">
+      <div class="show-visual">
+        <figure class="fig">
+          <a href="assets/img/equitation-site.jpg" target="_blank" rel="noopener">
+            <div class="frame">
+              <div class="frame-bar"><i></i><i></i><i></i><em>horsebond.fr</em></div>
+              <img src="assets/img/equitation-site.jpg" alt="Page d'accueil du site du club équestre Horsebond" loading="lazy">
+            </div>
+          </a>
+          <figcaption>Page d'accueil complète, du bandeau aux avis clients.</figcaption>
+        </figure>
+      </div>
+      <div class="show-body">
+        <div class="show-head">
+          <span class="show-n">03</span>
+          <h3>Club équestre Horsebond</h3>
+          <p class="card-meta">Site complet · PHP · MySQL</p>
+        </div>
+        <p>
+          Calendrier d'événements, boutique, espace membre, version bilingue. Une page longue
+          où chaque bloc répond à une question que se pose un futur adhérent, dans l'ordre où
+          il se la pose.
+        </p>
+      </div>
+    </article>
+
+    <article class="show rv" data-tags="web">
+      <div class="show-visual">
+        <figure class="fig">
+          <a href="assets/img/jardin-cocagne.jpg" target="_blank" rel="noopener">
+            <div class="frame">
+              <div class="frame-bar"><i></i><i></i><i></i><em>Jardin de Cocagne — espace client</em></div>
+              <img src="assets/img/jardin-cocagne.jpg" srcset="assets/img/jardin-cocagne@0.5.jpg 424w, assets/img/jardin-cocagne.jpg 849w" sizes="(max-width:880px) 100vw, 45vw" alt="Espace client de Jardin de Cocagne : paniers disponibles et abonnements" loading="lazy">
+            </div>
+          </a>
+          <figcaption>Le panier se choisit à l'image, pas au nom.</figcaption>
+        </figure>
+      </div>
+      <div class="show-body">
+        <div class="show-head">
+          <span class="show-n">04</span>
+          <h3>Jardin de Cocagne</h3>
+          <p class="card-meta">Angular · Android · Node.js</p>
+        </div>
+        <p>
+          Deux interfaces pour deux métiers opposés : le client qui commande en trois clics,
+          l'administrateur qui organise des tournées de livraison. Un même modèle de données,
+          deux grammaires d'usage.
+        </p>
+      </div>
+    </article>
+
+    <article class="show rev rv" data-tags="desktop">
+      <div class="show-visual">
+        <figure class="fig">
+          <a href="assets/img/equitation-java.jpg" target="_blank" rel="noopener">
+            <div class="frame">
+              <div class="frame-bar"><i></i><i></i><i></i><em>Application Java Swing</em></div>
+              <img src="assets/img/equitation-java.jpg" srcset="assets/img/equitation-java@0.5.jpg 599w, assets/img/equitation-java.jpg 1198w" sizes="(max-width:880px) 100vw, 45vw" alt="Interface de connexion Java Swing du projet équestre" loading="lazy">
+            </div>
+          </a>
+          <figcaption>Écran de connexion, application compagnon du site équestre.</figcaption>
+        </figure>
+      </div>
+      <div class="show-body">
+        <div class="show-head">
+          <span class="show-n">05</span>
+          <h3>Interfaces Java Swing</h3>
+          <p class="card-meta">Application desktop</p>
+        </div>
+        <p>
+          Disposition adaptative et retour visuel immédiat. Le desktop impose sa propre grammaire :
+          pas de geste, pas de défilement infini, tout doit tenir dans une fenêtre qu'on redimensionne.
+        </p>
+      </div>
+    </article>
+
+    <article class="show rv" data-tags="game">
+      <div class="show-visual">
+        <div class="fig-row two" style="margin-top:0;gap:14px">
+          <figure class="fig pixel">
+            <a href="assets/img/jeu-environnement.png" target="_blank" rel="noopener">
+              <img src="assets/img/jeu-environnement.png" alt="Environnement du jeu 2D : décor, murs et personnage héros" loading="lazy">
+            </a>
+            <figcaption>L'environnement</figcaption>
+          </figure>
+          <figure class="fig pixel">
+            <a href="assets/img/jeu-monstre.png" target="_blank" rel="noopener">
+              <img src="assets/img/jeu-monstre.png" alt="Le héros face à un monstre dans le jeu 2D" loading="lazy">
+            </a>
+            <figcaption>Le monstre passe à l'état attaque</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="show-body">
+        <div class="show-head">
+          <span class="show-n">06</span>
+          <h3>Moteur de jeu 2D</h3>
+          <p class="card-meta">Java · POO · UML</p>
+        </div>
+        <p>
+          Héros et monstres partagent une classe de base, chaque monstre suit une machine à états —
+          promenade, collision, attaque. Le diagramme a été dessiné avant le code, et c'est ce qui
+          a permis d'ajouter un type d'ennemi sans rien casser.
+        </p>
+        <details class="more">
+          <summary><span class="pl"></span> Le diagramme de classes</summary>
+          <div class="more-body">
+            <figure class="fig">
+              <a href="assets/img/moteur-jeu-uml.jpg" target="_blank" rel="noopener">
+                <img src="assets/img/moteur-jeu-uml.jpg" srcset="assets/img/moteur-jeu-uml@0.5.jpg 800w, assets/img/moteur-jeu-uml.jpg 1600w" sizes="(max-width:880px) 100vw, 45vw" alt="Diagramme de classes UML du moteur de jeu Java" loading="lazy">
+              </a>
+              <figcaption>Objet, ObjetHeros, ObjetMonstre et les états.</figcaption>
+            </figure>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <article class="show rev rv" data-tags="web">
+      <div class="show-visual">
+        <figure class="fig">
+          <a href="assets/img/travel-agency.jpg" target="_blank" rel="noopener">
+            <div class="frame">
+              <div class="frame-bar"><i></i><i></i><i></i><em>GlobeTour</em></div>
+              <img src="assets/img/travel-agency.jpg" srcset="assets/img/travel-agency@0.5.jpg 600w, assets/img/travel-agency.jpg 1200w" sizes="(max-width:880px) 100vw, 45vw" alt="Page d'accueil du site GlobeTour : navigation, bandeau de destinations et présentation de l'agence" loading="lazy">
+            </div>
+          </a>
+          <figcaption>Bandeau de destinations, présentation, puis les offres.</figcaption>
+        </figure>
+      </div>
+      <div class="show-body">
+        <div class="show-head">
+          <span class="show-n">07</span>
+          <h3>GlobeTour — agence de voyage</h3>
+          <p class="card-meta">Site responsive · PHP · MySQL</p>
+        </div>
+        <p>
+          Catalogue de destinations, réservation en ligne, espace d'administration. Sept entrées
+          de navigation, dont l'inscription et la connexion mises en évidence — ce sont les deux
+          seules actions qui engagent le visiteur.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="grid g-2" style="align-items:start;gap:56px">
+      <p class="claim rv">L'accessibilité est une question de <em>sécurité.</em></p>
+      <div class="rv rv-d1">
+        <p class="lede">
+          Contraste, navigation clavier, clarté des messages d'erreur : je les traite comme des
+          exigences de sécurité, pas comme du confort.
+        </p>
+        <details class="more">
+          <summary><span class="pl"></span> Ma méthode en quatre temps</summary>
+          <div class="more-body">
+            <div class="detail-grid">
+              <div><h4>01 — Comprendre</h4><p>Qui s'en sert, dans quel contexte, et ce que ça coûte de se tromper.</p></div>
+              <div><h4>02 — Structurer</h4><p>Arborescence et parcours avant la couleur. On règle la navigation avant qu'elle ne coûte des jours.</p></div>
+              <div><h4>03 — Maquetter</h4><p>Composants réutilisables sous Figma, avec leurs états définis.</p></div>
+              <div><h4>04 — Éprouver</h4><p>Test sur appareil réel, clavier, contraste. Puis retour en arrière.</p></div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="grid g-2">
+      <a class="gate rv" data-pillar="cyber" href="ia-cyber.html">
+        <span class="gate-n">SUIVANT</span><h3>IA &amp; Cybersécurité</h3>
+        <span class="gate-go">Ouvrir <span>→</span></span>
+      </a>
+      <a class="gate rv rv-d1" href="labs.html">
+        <span class="gate-n">EN DIRECT</span><h3>Labs</h3>
+        <span class="gate-go">Ouvrir <span>→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html" style="font-size:1.05rem">ayat<span>.</span>merimi</a>
+        <p style="font-size:.88rem;margin-top:12px;max-width:30ch">Élève ingénieure cybersécurité.</p>
+      </div>
+      <div><h4>Piliers</h4><ul>
+        <li><a href="design.html">Design &amp; UX</a></li>
+        <li><a href="ia-cyber.html">IA &amp; Cybersécurité</a></li>
+        <li><a href="backend.html">Backend &amp; Données</a></li>
+        <li><a href="reseaux.html">Réseaux &amp; Systèmes</a></li>
+      </ul></div>
+      <div><h4>Ailleurs</h4><ul>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="labs.html">Labs</a></li>
+        <li><a href="cv-ayat-merimi.pdf" target="_blank" rel="noopener">CV</a></li>
+        <li><a href="https://github.com/merimia" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/ayat-merimi" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-base">
+      <span>© <span data-year>2026</span> Ayat Merimi</span>
+      <span>Codé à la main · GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+
+<div id="egg" role="status" aria-live="polite"></div>
+<script src="assets/js/core.js" defer></script>
+<script src="assets/js/fx.js" defer></script>
+<script src="assets/js/robot.js" defer></script>
+</body>
+</html>

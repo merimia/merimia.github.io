@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://merimia.github.io/sitemap.xml

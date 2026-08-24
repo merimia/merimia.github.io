@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Ayat Merimi — Mascotte « bit »
+   Petit robot de terminal, présent uniquement sur la page Design & UX.
+   Il avance au rythme du défilement : décoratif, mais indexé sur une
+   information réelle — la progression dans la page.
+   ========================================================================== */
+
+#bit {
+  position: fixed;
+  left: 0;
+  bottom: 14px;
+  z-index: 60;
+  width: 46px;
+  height: 54px;
+  pointer-events: none;
+  will-change: transform;
+  transition: transform .18s linear;
+}
+
+#bit .bit-btn {
+  pointer-events: auto;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  line-height: 0;
+}
+#bit .bit-btn:focus-visible { outline: 2px solid var(--pink); outline-offset: 4px; border-radius: 6px; }
+
+/* Rebond de marche — actif seulement pendant le défilement */
+#bit .bit-body { transition: transform .1s linear; }
+#bit.walk .bit-body { animation: bitHop .42s ease-in-out infinite; }
+@keyframes bitHop {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+
+/* Jambes alternées */
+#bit.walk .leg-l { animation: legA .42s ease-in-out infinite; }
+#bit.walk .leg-r { animation: legB .42s ease-in-out infinite; }
+@keyframes legA { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes legB { 0%, 100% { transform: translateY(-3px); } 50% { transform: translateY(0); } }
+
+/* Antenne : clignote lentement à l'arrêt, plus vite en marche */
+#bit .ant { animation: bitAnt 2.6s ease-in-out infinite; }
+#bit.walk .ant { animation-duration: 1s; }
+@keyframes bitAnt { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+
+/* Yeux : clignement occasionnel */
+#bit .eyes { animation: bitBlink 5.4s infinite; transform-origin: center; }
+@keyframes bitBlink { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(.12); } }
+
+/* Orientation selon le sens du défilement */
+#bit.left .bit-flip { transform: scaleX(-1); transform-origin: center; }
+
+/* Bulle */
+#bit .bit-say {
+  position: absolute;
+  bottom: 58px;
+  left: 50%;
+  transform: translate(-50%, 6px);
+  width: max-content;
+  max-width: 250px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 9px 13px;
+  font-size: .78rem;
+  line-height: 1.5;
+  color: var(--txt-2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .22s var(--ease), transform .22s var(--ease), visibility .22s;
+}
+#bit .bit-say::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 8px; height: 8px;
+  margin-left: -4px;
+  background: var(--surface);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transform: rotate(45deg);
+}
+#bit.say .bit-say { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+
+@media (max-width: 760px) { #bit { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  #bit { transition: none; }
+  #bit .ant, #bit .eyes, #bit.walk .bit-body,
+  #bit.walk .leg-l, #bit.walk .leg-r { animation: none; }
+}

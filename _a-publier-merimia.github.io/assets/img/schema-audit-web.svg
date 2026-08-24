@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 636" width="1180" height="636" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+<rect width="1180" height="636" rx="14" fill="#0d1117"/>
+<rect x="0" y="0" width="1180" height="46" rx="14" fill="#11161d"/>
+<rect x="0" y="32" width="1180" height="14" fill="#11161d"/>
+<line x1="0" y1="46" x2="1180" y2="46" stroke="#252c37"/>
+<circle cx="24" cy="23" r="6" fill="#ff5f57"/>
+<circle cx="44" cy="23" r="6" fill="#febc2e"/>
+<circle cx="64" cy="23" r="6" fill="#28c840"/>
+<text x="590.0" y="28" fill="#8b949e" font-size="13.5" text-anchor="middle">SAÉ 4.01 — Audit &amp; sécurisation d'une application web héritée · PHP / PDO</text>
+<rect x="22" y="60" width="557.0" height="442" rx="11" fill="#161b22" stroke="#252c37"/>
+<rect x="38" y="76" width="76" height="26" rx="7" fill="#f87171" fill-opacity=".14" stroke="#f87171" stroke-opacity=".5"/>
+<text x="76" y="94" fill="#f87171" font-size="13" font-weight="700" letter-spacing="1.2" text-anchor="middle">AVANT</text>
+<text x="126" y="94" fill="#8b949e" font-size="12.5">code hérité</text>
+<text x="40" y="132" font-size="13" xml:space="preserve"><tspan fill="#6e7681">//&#160;login.php&#160;—&#160;version&#160;héritée</tspan></text>
+<text x="40" y="153" font-size="13" xml:space="preserve"><tspan fill="#79c0ff">$sql</tspan><tspan fill="#e6edf3">&#160;=&#160;</tspan><tspan fill="#7ee787">"SELECT&#160;*&#160;FROM&#160;users</tspan></text>
+<text x="40" y="174" font-size="13" xml:space="preserve"><tspan fill="#7ee787">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;WHERE&#160;login&#160;=&#160;'"</tspan><tspan fill="#e6edf3">&#160;.&#160;</tspan><tspan fill="#79c0ff">$_POST</tspan><tspan fill="#e6edf3">[</tspan><tspan fill="#7ee787">'login'</tspan><tspan fill="#e6edf3">]&#160;.&#160;</tspan><tspan fill="#7ee787">"'</tspan></text>
+<text x="40" y="195" font-size="13" xml:space="preserve"><tspan fill="#7ee787">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;AND&#160;pass&#160;&#160;=&#160;'"</tspan><tspan fill="#e6edf3">&#160;.&#160;</tspan><tspan fill="#79c0ff">$_POST</tspan><tspan fill="#e6edf3">[</tspan><tspan fill="#7ee787">'pass'</tspan><tspan fill="#e6edf3">]&#160;.&#160;</tspan><tspan fill="#7ee787">"'";</tspan></text>
+<text x="40" y="216" font-size="13" xml:space="preserve"><tspan fill="#79c0ff">$res</tspan><tspan fill="#e6edf3">&#160;=&#160;</tspan><tspan fill="#d2a8ff">mysql_query</tspan><tspan fill="#e6edf3">(</tspan><tspan fill="#79c0ff">$sql</tspan><tspan fill="#e6edf3">);</tspan></text>
+<text x="40" y="237" font-size="13" xml:space="preserve"><tspan fill="#e6edf3"></tspan></text>
+<text x="40" y="258" font-size="13" xml:space="preserve"><tspan fill="#d2a8ff">session_start</tspan><tspan fill="#e6edf3">();</tspan></text>
+<text x="40" y="279" font-size="13" xml:space="preserve"><tspan fill="#79c0ff">$_SESSION</tspan><tspan fill="#e6edf3">[</tspan><tspan fill="#7ee787">'user'</tspan><tspan fill="#e6edf3">]&#160;=&#160;</tspan><tspan fill="#79c0ff">$_POST</tspan><tspan fill="#e6edf3">[</tspan><tspan fill="#7ee787">'login'</tspan><tspan fill="#e6edf3">];</tspan></text>
+<text x="40" y="300" font-size="13" xml:space="preserve"><tspan fill="#e6edf3"></tspan></text>
+<text x="40" y="321" font-size="13" xml:space="preserve"><tspan fill="#d2a8ff">ini_set</tspan><tspan fill="#e6edf3">(</tspan><tspan fill="#7ee787">'display_errors'</tspan><tspan fill="#e6edf3">,&#160;</tspan><tspan fill="#ffa657">1</tspan><tspan fill="#e6edf3">);</tspan></text>
+<rect x="40" y="376" width="521.0" height="30" rx="8" fill="#f87171" fill-opacity=".10"/>
+<rect x="40" y="376" width="3" height="30" rx="1.5" fill="#f87171"/>
+<text x="54" y="396" fill="#f87171" font-size="12.4" font-family="Inter, -apple-system, Segoe UI, sans-serif">Concaténation directe : injection SQL</text>
+<rect x="40" y="414" width="521.0" height="30" rx="8" fill="#f87171" fill-opacity=".10"/>
+<rect x="40" y="414" width="3" height="30" rx="1.5" fill="#f87171"/>
+<text x="54" y="434" fill="#f87171" font-size="12.4" font-family="Inter, -apple-system, Segoe UI, sans-serif">Identifiant de session jamais régénéré</text>
+<rect x="40" y="452" width="521.0" height="30" rx="8" fill="#f87171" fill-opacity=".10"/>
+<rect x="40" y="452" width="3" height="30" rx="1.5" fill="#f87171"/>
+<text x="54" y="472" fill="#f87171" font-size="12.4" font-family="Inter, -apple-system, Segoe UI, sans-serif">Erreurs affichées : fuite d'infrastructure</text>
+<rect x="601.0" y="60" width="557.0" height="442" rx="11" fill="#161b22" stroke="#252c37"/>
+<rect x="617.0" y="76" width="76" height="26" rx="7" fill="#4ade80" fill-opacity=".14" stroke="#4ade80" stroke-opacity=".5"/>
+<text x="655.0" y="94" fill="#4ade80" font-size="13" font-weight="700" letter-spacing="1.2" text-anchor="middle">APRÈS</text>
+<text x="705.0" y="94" fill="#8b949e" font-size="12.5">après audit</text>
+<text x="619.0" y="132" font-size="13" xml:space="preserve"><tspan fill="#6e7681">//&#160;login.php&#160;—&#160;après&#160;audit</tspan></text>
+<text x="619.0" y="153" font-size="13" xml:space="preserve"><tspan fill="#79c0ff">$stmt</tspan><tspan fill="#e6edf3">&#160;=&#160;</tspan><tspan fill="#79c0ff">$pdo</tspan><tspan fill="#e6edf3">-&gt;</tspan><tspan fill="#d2a8ff">prepare</tspan><tspan fill="#e6edf3">(</tspan></text>
+<text x="619.0" y="174" font-size="13" xml:space="preserve"><tspan fill="#e6edf3">&#160;&#160;</tspan><tspan fill="#7ee787">'SELECT&#160;id,&#160;login,&#160;role&#160;FROM&#160;users</tspan></text>
+<text x="619.0" y="195" font-size="13" xml:space="preserve"><tspan fill="#7ee787">&#160;&#160;&#160;&#160;WHERE&#160;login&#160;=&#160;:login&#160;AND&#160;pass&#160;=&#160;:pass'</tspan></text>
+<text x="619.0" y="216" font-size="13" xml:space="preserve"><tspan fill="#e6edf3">);</tspan></text>
+<text x="619.0" y="237" font-size="13" xml:space="preserve"><tspan fill="#79c0ff">$stmt</tspan><tspan fill="#e6edf3">-&gt;</tspan><tspan fill="#d2a8ff">execute</tspan><tspan fill="#e6edf3">([</tspan><tspan fill="#7ee787">':login'</tspan><tspan fill="#e6edf3">&#160;=&gt;&#160;</tspan><tspan fill="#79c0ff">$login</tspan><tspan fill="#e6edf3">,&#160;</tspan><tspan fill="#e6edf3">...</tspan><tspan fill="#e6edf3">]);</tspan></text>
+<text x="619.0" y="258" font-size="13" xml:space="preserve"><tspan fill="#e6edf3"></tspan></text>
+<text x="619.0" y="279" font-size="13" xml:space="preserve"><tspan fill="#c084fc">if</tspan><tspan fill="#e6edf3">&#160;(</tspan><tspan fill="#79c0ff">$stmt</tspan><tspan fill="#e6edf3">-&gt;</tspan><tspan fill="#d2a8ff">fetch</tspan><tspan fill="#e6edf3">())&#160;{</tspan></text>
+<text x="619.0" y="300" font-size="13" xml:space="preserve"><tspan fill="#e6edf3">&#160;&#160;&#160;&#160;</tspan><tspan fill="#d2a8ff">session_regenerate_id</tspan><tspan fill="#e6edf3">(</tspan><tspan fill="#c084fc">true</tspan><tspan fill="#e6edf3">);</tspan></text>
+<text x="619.0" y="321" font-size="13" xml:space="preserve"><tspan fill="#e6edf3">}</tspan></text>
+<text x="619.0" y="342" font-size="13" xml:space="preserve"><tspan fill="#d2a8ff">ini_set</tspan><tspan fill="#e6edf3">(</tspan><tspan fill="#7ee787">'display_errors'</tspan><tspan fill="#e6edf3">,&#160;</tspan><tspan fill="#ffa657">0</tspan><tspan fill="#e6edf3">);&#160;&#160;</tspan><tspan fill="#d2a8ff">error_log</tspan><tspan fill="#e6edf3">(...);</tspan></text>
+<rect x="619.0" y="376" width="521.0" height="30" rx="8" fill="#4ade80" fill-opacity=".10"/>
+<rect x="619.0" y="376" width="3" height="30" rx="1.5" fill="#4ade80"/>
+<text x="633.0" y="396" fill="#4ade80" font-size="12.4" font-family="Inter, -apple-system, Segoe UI, sans-serif">Requête préparée : la donnée n'est plus de la syntaxe</text>
+<rect x="619.0" y="414" width="521.0" height="30" rx="8" fill="#4ade80" fill-opacity=".10"/>
+<rect x="619.0" y="414" width="3" height="30" rx="1.5" fill="#4ade80"/>
+<text x="633.0" y="434" fill="#4ade80" font-size="12.4" font-family="Inter, -apple-system, Segoe UI, sans-serif">Identifiant régénéré à chaque connexion</text>
+<rect x="619.0" y="452" width="521.0" height="30" rx="8" fill="#4ade80" fill-opacity=".10"/>
+<rect x="619.0" y="452" width="3" height="30" rx="1.5" fill="#4ade80"/>
+<text x="633.0" y="472" fill="#4ade80" font-size="12.4" font-family="Inter, -apple-system, Segoe UI, sans-serif">Erreurs journalisées, jamais affichées</text>
+<rect x="22" y="520" width="1136" height="76" rx="11" fill="#11161d" stroke="#252c37"/>
+<text x="44" y="551" fill="#8b949e" font-size="13.5">$ </text>
+<text x="60" y="551" fill="#e6edf3" font-size="13.5">docker compose up -d</text>
+<text x="44" y="576" fill="#4ade80" font-size="13">✓ </text>
+<text x="62" y="576" fill="#8b949e" font-size="13">Environnement reconstruit — l'avant et l'après sont rejouables par un tiers</text>
+<rect x="890" y="542" width="246" height="32" rx="9" fill="#1b2230" stroke="#252c37"/>
+<text x="1013" y="563" fill="#8b949e" font-size="12.5" text-anchor="middle">Rapport technique rédigé en anglais</text>
+</svg>
